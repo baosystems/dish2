@@ -44,7 +44,7 @@ Example CSV file:
 "St Martas hospital","Fac042"
 </pre>
 
-NPM package info is found [here](https://www.npmjs.com/package/dish2).
+NPM package info is found [here](https://www.npmjs.com/package/dish2). Dish is built in [nodejs](https://nodejs.org/).
 
 ### Available commands
 
