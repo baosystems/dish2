@@ -10,8 +10,8 @@
 const fs = require('fs');
 const argv = require('yargs').argv;
 
-var config = undefined,
-    configFile = undefined;
+var config,
+    configFile;
 
 /**
 * Returns the config.
@@ -32,6 +32,9 @@ exports.getAuth = function() {
   return this.getConf().api.username + ':' + this.getConf().api.password;
 }
 
+/**
+* Returns the "file" command line argument.
+*/
 exports.getFile = function() {
   return argv.file;
 }

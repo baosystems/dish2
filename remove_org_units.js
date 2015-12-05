@@ -21,14 +21,21 @@ const conf = require('./configManager.js');
 const app = {
   getOptions: {
     auth: conf.getAuth(),
-    timeout: 40000
+    method: 'get',
+    timeout: 60000
+  },
+  postOptions: {
+    auth: conf.getAuth(),
+    method: 'post',
+    timeout: 60000
   },
   deleteOptions: {
     auth: conf.getAuth(),
     method: 'delete',
-    timeout: 40000
+    timeout: 60000
   },
   orgUnitsUrl: conf.getConf().api.baseUrl + '/organisationUnits',
+  pruneUrl: conf.getConf().api.baseUrl + '/maintenance/dataPruning/organisationUnits',
   filename: conf.getFile(),
   deleteCount: 0,
   errorCount: 0
@@ -76,19 +83,31 @@ app.removeOrgUnit = function(obj,prop) {
 
     if (ous && ous.organisationUnits && ous.organisationUnits[0]) {
         ou = ous.organisationUnits[0];
-        delUrl = app.orgUnitsUrl + '/' + ou.id;
-        console.log('Delete URL: ' + delUrl);
+        delDataUrl = app.pruneUrl + '/' + ou.id;
+        delOuUrl = app.orgUnitsUrl + '/' + ou.id;
+        console.log('Delete data for org unit URL: ' + delDataUrl);
+        console.log('Delete org unit URL: ' + delOuUrl);
 
-        delResp = urlsync.request(delUrl, app.deleteOptions);
+        delDataResp = urlsync.request(delDataUrl, app.postOptions);
 
-        if (delResp && 204 == delResp.status) {
+        if (delDataResp && 200 == delDataResp.status) {
+          console.log('Data for org unit successfully deleted: ' + ou.id + ', ' + ou.name);
+        }
+        else {
+          console.log('Data for org unit could not be deleted: ' + ou.id + ', ' + ou.name);
+          console.log(delDataResp);
+        }
+
+        delOuResp = urlsync.request(delOuUrl, app.deleteOptions);
+
+        if (delOuResp && 204 == delOuResp.status) {
             console.log('Org unit successfully deleted: ' + ou.id + ', ' + ou.name);
             app.deleteCount++;
             return true;
         }
         else {
-            console.log('Org unit could not be deleted');
-            console.log(delResp);
+            console.log('Org unit could not be deleted: ' + ou.id + ', ' + ou.name);
+            console.log(delOuResp);
             app.errorCount++;
         }
     }

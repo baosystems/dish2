@@ -19,8 +19,7 @@ The following commands are available.
 
 ### Remove organisation units
 
-The remove_org_units command will remove a batch of organisation units. It reads
-organisation units from a CSV file.
+The remove_org_units command will remove a batch of organisation units, including associated complete data set registrations, data approvals and data values. It reads organisation units from a CSV file. It requires that the authenticated user has the "ALL" authority in order to delete data values and at least the "delete organisation units" authority in order to delete organisation units.
 
 Usage:
 
