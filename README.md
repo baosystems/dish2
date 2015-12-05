@@ -17,9 +17,9 @@ Dish is configured through a "conf.json" configuration file which must be valid 
 <pre>
 {
   "api": {
-    "baseUrl": "http://www.yourinstance.com",
-    "username": "user",
-    "password": "pw"
+    "baseUrl": "http://localhost:8080/api",
+    "username": "admin",
+    "password": "district"
   }
 }
 </pre>
