@@ -48,13 +48,13 @@ The *dish_remove_org_units* command will remove a batch of organisation units, i
 
 <pre>dish_remove_org_units --file &lt;name-of-org-unit-csv-file&gt;</pre>
 
-### Generate analytics tables
+#### Generate analytics tables
 
 The *dish_gen_analytics_tables* command will initiate the analytics table generation process.
 
 <pre>dish_gen_analytics_tables</pre>
 
-### Generate resource tables
+#### Generate resource tables
 
 The *dish_gen_resource_tables* command will initiate the resource table generation process.
 
