@@ -2,7 +2,6 @@
   "name": "dish",
   "version": "0.0.1",
   "description": "Dish is a command line tool for DHIS 2 Web API interaction",
-  "main": "index.js",
   "dependencies": {
     "csvtojson": "^0.4.6",
     "urllib-sync": "^1.1.2",
