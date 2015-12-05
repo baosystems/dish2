@@ -8,6 +8,8 @@ Dish is a NPM package and requires NPM to be installed on your local system. You
 
 <pre>npm install dish2 -g</pre>
 
+You can view the details on the NPM package page on [npmjs.com/package/dish2](https://www.npmjs.com/package/dish2).
+
 ### Configuration
 
 Dish is configured through a "conf.json" configuration file which must be valid JSON. Example configuration:
