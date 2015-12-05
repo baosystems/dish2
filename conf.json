@@ -1,0 +1,7 @@
+{
+  "api": {
+    "baseUrl": "http://localhost/dhis/api",
+    "username": "admin",
+    "password": "district"
+  }
+}
