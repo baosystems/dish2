@@ -2,7 +2,6 @@
  * Command which deletes organisation units with associated data.
  */
 
-const fs = require('fs');
 const csvtojson = require('csvtojson');
 const urlsync = require('urllib-sync');
 const conf = require('./configManager.js');
