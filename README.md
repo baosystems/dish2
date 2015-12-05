@@ -12,7 +12,7 @@ The "-g" global option will ensure that you can invoke the available Dish comman
 
 ### Configuration
 
-Dish is configured through a "conf.json" configuration file which must be valid JSON. Example configuration:
+Dish is configured through a *dish.json* configuration file which must be a valid JSON object. Example configuration:
 
 <pre>
 {
@@ -22,6 +22,13 @@ Dish is configured through a "conf.json" configuration file which must be valid 
     "password": "district"
   }
 }
+</pre>
+
+This config file will be searched for at a location defined by a *DHIS2_HOME* environment variable (borrowed from the DHIS 2 setup). First define the DHIS2_HOME variable if not already set, then place the *dish.json* file in the specified directory.
+
+<pre>
+export DHIS2_HOME='/home/dhis/config'
+touch /home/dhis/config/dish.json
 </pre>
 
 ### General

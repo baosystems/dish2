@@ -12,7 +12,9 @@ const fs = require('fs');
 const argv = require('yargs').argv;
 
 var config,
-    configFile;
+    configFile,
+    configLocation,
+    configFilename = 'dish.json';
 
 /**
 * Returns the config.
@@ -44,8 +46,20 @@ exports.getFile = function() {
 * Initalizes configuration.
 */
 initAndGetConf = function() {
+
+  var loc = process.env.DHIS2_HOME;
+
+  if(loc) {
+    configLocation = loc + '/' + configFilename;
+    console.log('DHIS2_HOME environment variable pointing to: ' + loc);
+  }
+  else {
+    configLocation = configFilename;
+    console.log('Warning, DHIS2_HOME environment variable not set, using default config location');
+  }
+
   try {
-    configFile = fs.readFileSync('conf.json', 'utf8');
+    configFile = fs.readFileSync(configLocation, 'utf8');
   }
   catch (ex) {
     throw new Error('Configuration file "conf.json" was not found or could not be parsed');
