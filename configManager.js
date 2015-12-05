@@ -5,6 +5,7 @@
  *
  * npm install csvtojson
  * npm install urllib-sync
+ * npm install yargs
  */
 
 const fs = require('fs');
