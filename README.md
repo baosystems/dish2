@@ -15,7 +15,7 @@ Example CSV file:
 
 ### Configuration
 
-Dish is configured through a "conf.json" configuration file.
+Dish is configured through a "conf.json" configuration file which must be valid JSON. Example configuration:
 
 <pre>
 {
