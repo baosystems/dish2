@@ -21,9 +21,9 @@
   "license": "BSD-2-Clause",
   "preferGlobal": true,
   "bin": {
-    "dish_remove_org_units": "./remove_org_units.js",
-    "dish_gen_analytics_tables": "./generate_analytics_tables.js",
-    "dish_gen_resource_tables": "./generate_resource_tables.js"
+    "dish_remove_org_units": "bin/remove_org_units.js",
+    "dish_gen_analytics_tables": "bin/generate_analytics_tables.js",
+    "dish_gen_resource_tables": "bin/generate_resource_tables.js"
   },
   "bugs": {
     "url": "https://github.com/baosystems/dish/issues"
