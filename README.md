@@ -38,3 +38,19 @@ The *remove_org_units* command will remove a batch of organisation units, includ
 Usage:
 
 <pre>node remove_org_units.js --file &lt;name-of-org-unit-csv-file&gt;</pre>
+
+### Generate analytics tables
+
+The *generate_analytics_tables* command will initiate the analytics table generation process.
+
+Usage:
+
+<pre>node generate_analytics_tables.js</pre>
+
+### Generate resource tables
+
+The *generate_resource_tables* command will initiate the resource table generation process.
+
+Usage:
+
+<pre>node generate_resource_tables.js</pre>

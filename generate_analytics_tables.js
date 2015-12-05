@@ -15,8 +15,14 @@
 }
 
 app.generateAnalyticsTables = function() {
-  urlsync.request(app.analyticsTableUrl, app.postOptions);
-  console.log('Analytics table generation process started!');
+  var resp = urlsync.request(app.analyticsTableUrl, app.postOptions);
+
+  if (200 == resp.status) {
+    console.log('Analytics table generation could not be initiated');
+  }
+  else {
+    console.log('Analytics table generation could not be initiated, HTTP status: ' + resp.status);
+  }
 }
 
 app.generateAnalyticsTables();
