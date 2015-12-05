@@ -37,4 +37,4 @@ The *remove_org_units* command will remove a batch of organisation units, includ
 
 Usage:
 
-<pre>node ./remove_org_units.js --file &lt;name-of-org-unit-csv-file&gt;</pre>
+<pre>node ./remove_org_units.js --file &lt;path-to-org-unit-csv-file&gt;</pre>
