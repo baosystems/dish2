@@ -35,22 +35,16 @@ The following commands are available.
 
 The *remove_org_units* command will remove a batch of organisation units, including associated complete data set registrations, data approvals and data values. It reads organisation units from a CSV file. It requires that the authenticated user has the "ALL" authority in order to delete data values and at least the "delete organisation units" authority in order to delete organisation units.
 
-Usage:
-
 <pre>node remove_org_units.js --file &lt;name-of-org-unit-csv-file&gt;</pre>
 
 ### Generate analytics tables
 
 The *generate_analytics_tables* command will initiate the analytics table generation process.
 
-Usage:
-
 <pre>node generate_analytics_tables.js</pre>
 
 ### Generate resource tables
 
 The *generate_resource_tables* command will initiate the resource table generation process.
-
-Usage:
 
 <pre>node generate_resource_tables.js</pre>
