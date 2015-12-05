@@ -1,17 +1,14 @@
-/**
- * Command which starts the analytics table generation process.
- */
+#!/usr/bin/env node
+const urlsync = require('urllib-sync');
+const conf = require('./configManager.js');
 
- const urlsync = require('urllib-sync');
- const conf = require('./configManager.js');
-
- const app = {
-   postOptions: {
-     auth: conf.getAuth(),
-     method: 'post',
-     timeout: 60000
-   },
-   analyticsTableUrl: conf.getConf().api.baseUrl + '/resourceTables/analytics'
+const app = {
+  postOptions: {
+    auth: conf.getAuth(),
+    method: 'post',
+    timeout: 60000
+  },
+  analyticsTableUrl: conf.getConf().api.baseUrl + '/resourceTables/analytics'
 }
 
 app.generateAnalyticsTables = function() {

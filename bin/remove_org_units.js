@@ -1,7 +1,4 @@
-/**
- * Command which deletes organisation units with associated data.
- */
-
+#!/usr/bin/env node
 const csvtojson = require('csvtojson');
 const urlsync = require('urllib-sync');
 const conf = require('./configManager.js');
@@ -33,7 +30,7 @@ const app = {
  * Removes org units provided as the given json structure.
  * @param json the organisation units to remove.
  */
-app.removeOrgUnits = function(orgUnits) {
+ app.removeOrgUnits = function(orgUnits) {
     var obj,
         prop,
         props = ['name','code'];

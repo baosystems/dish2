@@ -1,17 +1,14 @@
-/**
- * Command which starts the resource table generation process.
- */
+#!/usr/bin/env node
+const urlsync = require('urllib-sync');
+const conf = require('./configManager.js');
 
- const urlsync = require('urllib-sync');
- const conf = require('./configManager.js');
-
- const app = {
-   postOptions: {
-     auth: conf.getAuth(),
-     method: 'post',
-     timeout: 60000
-   },
-   resourceTableUrl: conf.getConf().api.baseUrl + '/resourceTables'
+const app = {
+  postOptions: {
+    auth: conf.getAuth(),
+    method: 'post',
+    timeout: 60000
+  },
+  resourceTableUrl: conf.getConf().api.baseUrl + '/resourceTables'
 }
 
 app.generateResourceTables = function() {
