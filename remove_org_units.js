@@ -1,16 +1,5 @@
 /**
- * Command that deletes organisation units.
- *
- * The following header column names are valid: "name", "uid" and "code". The
- * script will attempt to match on any specified column/property. Column names
- * are case-sensitive. You must specify at least one column.
- *
- * Example CSV file:
- *
- * "name","code"
- * "Johns clinic", "Fac021"
- * "Bobs dispensary", "Fac015"
- * "St Martas hospital","Fac042"
+ * Command which deletes organisation units with associated data.
  */
 
 const fs = require('fs');
@@ -85,6 +74,7 @@ app.removeOrgUnit = function(obj,prop) {
         ou = ous.organisationUnits[0];
         delDataUrl = app.pruneUrl + '/' + ou.id;
         delOuUrl = app.orgUnitsUrl + '/' + ou.id;
+
         console.log('Delete data for org unit URL: ' + delDataUrl);
         console.log('Delete org unit URL: ' + delOuUrl);
 
@@ -95,7 +85,6 @@ app.removeOrgUnit = function(obj,prop) {
         }
         else {
           console.log('Data for org unit could not be deleted: ' + ou.id + ', ' + ou.name);
-          console.log(delDataResp);
         }
 
         delOuResp = urlsync.request(delOuUrl, app.deleteOptions);
@@ -107,7 +96,6 @@ app.removeOrgUnit = function(obj,prop) {
         }
         else {
             console.log('Org unit could not be deleted: ' + ou.id + ', ' + ou.name);
-            console.log(delOuResp);
             app.errorCount++;
         }
     }
@@ -135,7 +123,7 @@ app.convertCsvToJson = function(doneFn) {
 */
 app.run = function() {
   if (!conf.getFile() || !conf.getFile().length) {
-    console.log("Usage: node ./remove_org_units.js --file <name-of-org-unit-csv-file>");
+    console.log("Usage: node remove_org_units.js --file <name-of-org-unit-csv-file>");
     return;
   }
 
