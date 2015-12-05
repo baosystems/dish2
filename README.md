@@ -13,6 +13,20 @@ Example CSV file:
 "St Martas hospital","Fac042"
 </pre>
 
+### Configuration
+
+Dish is configured through a "conf.json" configuration file.
+
+<pre>
+{
+  "api": {
+    "baseUrl": "http://www.yourinstance.com",
+    "username": "user",
+    "password": "pw"
+  }
+}
+</pre>
+
 ### Available commands
 
 The following commands are available.
