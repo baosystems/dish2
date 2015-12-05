@@ -8,7 +8,7 @@ Dish is a NPM package and requires NPM to be installed on your local system. You
 
 <pre>npm install dish2 -g</pre>
 
-You can view the details on the NPM package page on [npmjs.com/package/dish2](https://www.npmjs.com/package/dish2).
+The -g (global) option will ensure that you can enable the available commands anywhere from your command line. You can view the details on the NPM package page on [npmjs.com/package/dish2](https://www.npmjs.com/package/dish2).
 
 ### Configuration
 
