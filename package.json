@@ -1,0 +1,28 @@
+{
+  "name": "dish",
+  "version": "0.0.1",
+  "description": "Dish is a command line tool for DHIS 2 Web API interaction",
+  "main": "index.js",
+  "dependencies": {
+    "csvtojson": "^0.4.6",
+    "urllib-sync": "^1.1.2",
+    "yargs": "^3.31.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baosystems/dish.git"
+  },
+  "keywords": [
+    "DHIS"
+  ],
+  "author": "Lars Helge Overland",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/baosystems/dish/issues"
+  },
+  "homepage": "https://github.com/baosystems/dish#readme"
+}
