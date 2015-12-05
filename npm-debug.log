@@ -1,0 +1,104 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/larshelg/.nvm/versions/node/v4.2.2/bin/node',
+1 verbose cli   '/home/larshelg/.nvm/versions/node/v4.2.2/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.2
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/home/larshelg/dev/src/dish',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/larshelg/.npm/dish/0.0.1/package.tgz not in flight; packing
+9 verbose tar pack [ '/home/larshelg/.npm/dish/0.0.1/package.tgz',
+9 verbose tar pack   '/home/larshelg/dev/src/dish' ]
+10 verbose tarball /home/larshelg/.npm/dish/0.0.1/package.tgz
+11 verbose folder /home/larshelg/dev/src/dish
+12 info prepublish dish@0.0.1
+13 verbose addLocalTarball adding from inside cache /home/larshelg/.npm/dish/0.0.1/package.tgz
+14 silly cache afterAdd dish@0.0.1
+15 verbose afterAdd /home/larshelg/.npm/dish/0.0.1/package/package.json not in flight; writing
+16 verbose afterAdd /home/larshelg/.npm/dish/0.0.1/package/package.json written
+17 silly publish { name: 'dish',
+17 silly publish   version: '0.0.1',
+17 silly publish   description: 'Dish is a command line tool for DHIS 2 Web API interaction',
+17 silly publish   engines: { node: '>= 4.2.2' },
+17 silly publish   dependencies:
+17 silly publish    { csvtojson: '^0.4.6',
+17 silly publish      'urllib-sync': '^1.1.2',
+17 silly publish      yargs: '^3.31.0' },
+17 silly publish   repository:
+17 silly publish    { type: 'git',
+17 silly publish      url: 'git+https://github.com/baosystems/dish.git' },
+17 silly publish   keywords: [ 'DHIS' ],
+17 silly publish   author: { name: 'Lars Helge Overland' },
+17 silly publish   license: 'BSD-2-Clause',
+17 silly publish   preferGlobal: true,
+17 silly publish   bin:
+17 silly publish    { dish_remove_org_units: 'bin/remove_org_units.js',
+17 silly publish      dish_gen_analytics_tables: 'bin/generate_analytics_tables.js',
+17 silly publish      dish_gen_resource_tables: 'bin/generate_resource_tables.js' },
+17 silly publish   bugs: { url: 'https://github.com/baosystems/dish/issues' },
+17 silly publish   homepage: 'https://github.com/baosystems/dish#readme',
+17 silly publish   readme: '# Dish\n\nDhis is a command line tool for interaction with the DHIS 2 Web API. It is suitable for handling batch metadata operations, system maintenance operations and more.\n\nThe commands heavily utilizes CSV files as input for manipulation of batches of metadata. The CSV files follows a common format where the following header column names are valid: "name", "uid" and "code". The commands will attempt to match on any specified column/property. Column names are case-sensitive. You must specify at least one column.\n\nExample CSV file:\n\n<pre>\n"name","code"\n"Johns clinic", "Fac021"\n"Bobs dispensary", "Fac015"\n"St Martas hospital","Fac042"\n</pre>\n\n### Configuration\n\nDish is configured through a "conf.json" configuration file which must be valid JSON. Example configuration:\n\n<pre>\n{\n  "api": {\n    "baseUrl": "http://www.yourinstance.com",\n    "username": "user",\n    "password": "pw"\n  }\n}\n</pre>\n\n### Available commands\n\nThe following commands are available.\n\n#### Remove organisation units\n\nThe *remove_org_units* command will remove a batch of organisation units, including associated complete data set registrations, data approvals and data values. It reads organisation units from a CSV file. It requires that the authenticated user has the "ALL" authority in order to delete data values and at least the "delete organisation units" authority in order to delete organisation units.\n\n<pre>node remove_org_units.js --file &lt;name-of-org-unit-csv-file&gt;</pre>\n\n### Generate analytics tables\n\nThe *generate_analytics_tables* command will initiate the analytics table generation process.\n\n<pre>node generate_analytics_tables.js</pre>\n\n### Generate resource tables\n\nThe *generate_resource_tables* command will initiate the resource table generation process.\n\n<pre>node generate_resource_tables.js</pre>\n',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: '0dc617afcde3de7b749530e33db06bd2c8b31f59',
+17 silly publish   _id: 'dish@0.0.1',
+17 silly publish   scripts: {},
+17 silly publish   _shasum: '43b62745c5e0a51e466af38c0646c9366ad528e5',
+17 silly publish   _from: '.' }
+18 verbose getPublishConfig undefined
+19 silly mapToRegistry name dish
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/dish
+23 verbose publish registryBase https://registry.npmjs.org/
+24 silly publish uploading /home/larshelg/.npm/dish/0.0.1/package.tgz
+25 verbose request uri https://registry.npmjs.org/dish
+26 verbose request sending authorization for write operation
+27 info attempt registry request try #1 at 5:29:04 PM
+28 verbose request using bearer token for auth
+29 verbose request id 795098ece108003f
+30 http request PUT https://registry.npmjs.org/dish
+31 http 403 https://registry.npmjs.org/dish
+32 verbose headers { 'content-type': 'application/json',
+32 verbose headers   'cache-control': 'max-age=60',
+32 verbose headers   'content-length': '96',
+32 verbose headers   'accept-ranges': 'bytes',
+32 verbose headers   date: 'Sat, 05 Dec 2015 16:29:05 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-ams4135-AMS',
+32 verbose headers   'x-cache': 'MISS',
+32 verbose headers   'x-cache-hits': '0',
+32 verbose headers   'x-timer': 'S1449332945.143355,VS0,VE651' }
+33 verbose request invalidating /home/larshelg/.npm/registry.npmjs.org/dish on PUT
+34 error publish Failed PUT 403
+35 verbose stack Error: You do not have permission to publish 'dish'. Are you logged in as the correct user? : dish
+35 verbose stack     at makeError (/home/larshelg/.nvm/versions/node/v4.2.2/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+35 verbose stack     at CachingRegistryClient.<anonymous> (/home/larshelg/.nvm/versions/node/v4.2.2/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+35 verbose stack     at Request._callback (/home/larshelg/.nvm/versions/node/v4.2.2/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+35 verbose stack     at Request.self.callback (/home/larshelg/.nvm/versions/node/v4.2.2/lib/node_modules/npm/node_modules/request/request.js:198:22)
+35 verbose stack     at emitTwo (events.js:87:13)
+35 verbose stack     at Request.emit (events.js:172:7)
+35 verbose stack     at Request.<anonymous> (/home/larshelg/.nvm/versions/node/v4.2.2/lib/node_modules/npm/node_modules/request/request.js:1063:14)
+35 verbose stack     at emitOne (events.js:82:20)
+35 verbose stack     at Request.emit (events.js:169:7)
+35 verbose stack     at IncomingMessage.<anonymous> (/home/larshelg/.nvm/versions/node/v4.2.2/lib/node_modules/npm/node_modules/request/request.js:1009:12)
+36 verbose statusCode 403
+37 verbose pkgid dish
+38 verbose cwd /home/larshelg/dev/src/dish
+39 error Linux 3.13.0-68-generic
+40 error argv "/home/larshelg/.nvm/versions/node/v4.2.2/bin/node" "/home/larshelg/.nvm/versions/node/v4.2.2/bin/npm" "publish"
+41 error node v4.2.2
+42 error npm  v2.14.7
+43 error code E403
+44 error You do not have permission to publish 'dish'. Are you logged in as the correct user? : dish
+45 error If you need help, you may report this error at:
+45 error     <https://github.com/npm/npm/issues>
+46 verbose exit [ 1, true ]

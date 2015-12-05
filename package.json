@@ -1,7 +1,7 @@
 {
-  "name": "dish",
+  "name": "dish2",
   "version": "0.0.1",
-  "description": "Dish is a command line tool for DHIS 2 Web API interaction",
+  "description": "Dish2 is a command line tool for DHIS 2 Web API interaction",
   "engines": {
     "node": ">= 4.2.2"
   },
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/baosystems/dish.git"
+    "url": "git+https://github.com/baosystems/dish2.git"
   },
   "keywords": [
     "DHIS"
@@ -26,7 +26,7 @@
     "dish_gen_resource_tables": "bin/generate_resource_tables.js"
   },
   "bugs": {
-    "url": "https://github.com/baosystems/dish/issues"
+    "url": "https://github.com/baosystems/dish2/issues"
   },
-  "homepage": "https://github.com/baosystems/dish#readme"
+  "homepage": "https://github.com/baosystems/dish2#readme"
 }
