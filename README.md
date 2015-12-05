@@ -4,7 +4,7 @@ Dhis is a command line tool for interaction with the DHIS 2 Web API. It is suita
 
 The commands heavily utilizes CSV files as input for manipulation of batches of metadata. The CSV files follows a common format where the following header column names are valid: "name", "uid" and "code". The commands will attempt to match on any specified column/property. Column names are case-sensitive. You must specify at least one column.
 
-*Example CSV file:*
+Example CSV file:
 
 <pre>
 "name","code"
