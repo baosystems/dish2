@@ -58,7 +58,7 @@ The *dish_remove_org_units* command will remove a batch of organisation units, i
 
 #### Upload custom data entry form
 
-The *dish_post_custom_form* command will upload a custom HTML data entry form from a file for a given data set in the DHIS 2 instance.
+The *dish_post_custom_form* command will upload a custom HTML data entry form from a file for a given data set.
 
 <pre>dish_post_custom_form --dataset &lt;dataset-uid&gt; --file &lt;path-to-custom-form-file&gt;</pre>
 
