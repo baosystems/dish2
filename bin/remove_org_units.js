@@ -1,24 +1,10 @@
 #!/usr/bin/env node
 const csvtojson = require('csvtojson');
 const urlsync = require('urllib-sync');
+const fs = require('fs');
 const conf = require('./configManager.js');
 
 const app = {
-  getOptions: {
-    auth: conf.getAuth(),
-    method: 'get',
-    timeout: 60000
-  },
-  postOptions: {
-    auth: conf.getAuth(),
-    method: 'post',
-    timeout: 60000
-  },
-  deleteOptions: {
-    auth: conf.getAuth(),
-    method: 'delete',
-    timeout: 60000
-  },
   orgUnitsUrl: conf.getConf().api.baseUrl + '/organisationUnits',
   pruneUrl: conf.getConf().api.baseUrl + '/maintenance/dataPruning/organisationUnits',
   filename: conf.getFile(),
@@ -63,7 +49,7 @@ app.removeOrgUnit = function(obj,prop) {
     var ouResp, ous, ou, delUrl, delResp;
     var url = app.orgUnitsUrl + '.json?paging=false&filter=' + prop + ':eq:' + obj[prop];
 
-    ouResp = urlsync.request(url, app.getOptions);
+    ouResp = urlsync.request(url, conf.getOptions().get);
     ous = JSON.parse(ouResp.data.toString('utf8'));
 
     if (ous && ous.organisationUnits && ous.organisationUnits[0]) {
@@ -74,7 +60,7 @@ app.removeOrgUnit = function(obj,prop) {
         console.log('Delete data for org unit URL: ' + delDataUrl);
         console.log('Delete org unit URL: ' + delOuUrl);
 
-        delDataResp = urlsync.request(delDataUrl, app.postOptions);
+        delDataResp = urlsync.request(delDataUrl, conf.getOptions().post);
 
         if (delDataResp && 200 == delDataResp.status) {
           console.log('Data for org unit successfully deleted: ' + ou.id + ', ' + ou.name);
@@ -83,7 +69,7 @@ app.removeOrgUnit = function(obj,prop) {
           console.log('Data for org unit could not be deleted: ' + ou.id + ', ' + ou.name);
         }
 
-        delOuResp = urlsync.request(delOuUrl, app.deleteOptions);
+        delOuResp = urlsync.request(delOuUrl, conf.getOptions().delete);
 
         if (delOuResp && 204 == delOuResp.status) {
             console.log('Org unit successfully deleted: ' + ou.id + ', ' + ou.name);

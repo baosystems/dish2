@@ -36,6 +36,29 @@ exports.getAuth = function() {
 }
 
 /**
+* Returns a JSON suitable for network operations.
+*/
+exports.getOptions = function() {
+  return {
+    get: {
+      auth: this.getAuth(),
+      method: 'get',
+      timeout: 60000
+    },
+    post: {
+      auth: this.getAuth(),
+      method: 'post',
+      timeout: 60000
+    },
+    delete: {
+      auth: this.getAuth(),
+      method: 'delete',
+      timeout: 60000
+    }
+  };
+}
+
+/**
 * Returns the "file" command line argument.
 */
 exports.getFile = function() {
@@ -46,10 +69,9 @@ exports.getFile = function() {
 * Initalizes configuration.
 */
 initAndGetConf = function() {
-
   var loc = process.env.DHIS2_HOME;
 
-  if(loc) {
+  if (loc) {
     configLocation = loc + '/' + configFilename;
     console.log('DHIS2_HOME environment variable pointing to: ' + loc);
   }
