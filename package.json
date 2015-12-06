@@ -6,9 +6,9 @@
     "node": ">= 4.2.2"
   },
   "dependencies": {
-    "csvtojson": "^0.4.6",
-    "urllib-sync": "^1.1.2",
-    "yargs": "^3.31.0"
+    "csvtojson": "0.4.6",
+    "urllib-sync": "1.1.2",
+    "yargs": "3.31.0"
   },
   "repository": {
     "type": "git",
