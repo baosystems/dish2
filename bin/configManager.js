@@ -69,7 +69,7 @@ exports.getArgs = function() {
 * Indicates if the given argument was provided from the command line.
 */
 exports.isArg = function(arg) {
-  return this.getArgs()[arg] && this.getArgs()[arg].length;
+  return !!(argv[arg] && argv[arg].length);
 }
 
 /**
