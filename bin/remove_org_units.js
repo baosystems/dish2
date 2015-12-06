@@ -7,7 +7,7 @@ const conf = require('./configManager.js');
 const app = {
   orgUnitsUrl: conf.getConf().api.baseUrl + '/organisationUnits',
   pruneUrl: conf.getConf().api.baseUrl + '/maintenance/dataPruning/organisationUnits',
-  filename: conf.getFile(),
+  filename: conf.getArgs().file,
   deleteCount: 0,
   errorCount: 0
 }
@@ -97,15 +97,15 @@ app.convertCsvToJson = function(doneFn) {
     var Converter = require('csvtojson').Converter;
     var converter = new Converter({});
     converter.on('end_parsed', doneFn);
-    fs.createReadStream(conf.getFile()).pipe(converter);
+    fs.createReadStream(conf.getArgs().file).pipe(converter);
 }
 
 /**
 * Runs command.
 */
 app.run = function() {
-  if (!conf.getFile() || !conf.getFile().length) {
-    console.log("Usage: node remove_org_units.js --file <name-of-org-unit-csv-file>");
+  if (!conf.isArg('file')) {
+    console.log('Usage: node remove_org_units.js --file <name-of-org-unit-csv-file>');
     return;
   }
 

@@ -59,10 +59,17 @@ exports.getOptions = function() {
 }
 
 /**
-* Returns the "file" command line argument.
+* Returns the command line arguments as an object.
 */
-exports.getFile = function() {
-  return argv.file;
+exports.getArgs = function() {
+  return argv;
+}
+
+/**
+* Indicates if the given argument was provided from the command line.
+*/
+exports.isArg = function(arg) {
+  return this.getArgs()[arg] && this.getArgs()[arg].length;
 }
 
 /**
