@@ -31,19 +31,6 @@ export DHIS2_HOME='/home/dhis/config'
 touch /home/dhis/config/dish.json
 </pre>
 
-### General
-
-The commands heavily utilizes CSV files as input for manipulation of batches of metadata. The CSV files follows a common format where the following header column names are valid: "name", "uid" and "code". The commands will attempt to match on any specified column/property. Column names are case-sensitive. You must specify at least one column.
-
-Example CSV file:
-
-<pre>
-"name","code"
-"Johns clinic", "Fac021"
-"Bobs dispensary", "Fac015"
-"St Martas hospital","Fac042"
-</pre>
-
 NPM package info is found [here](https://www.npmjs.com/package/dish2). Dish is built with [nodejs](https://nodejs.org/).
 
 ### Available commands
@@ -55,6 +42,17 @@ The following commands are available.
 The *dish_remove_org_units* command will remove a batch of organisation units, including associated complete data set registrations, data approvals and data values. It reads organisation units from a CSV file. It requires that the authenticated DHIS 2 user has the "ALL" authority in order to delete data values and at least the "delete organisation units" authority in order to delete organisation units.
 
 <pre>dish_remove_org_units --file &lt;path-to-org-unit-csv-file&gt;</pre>
+
+The CSV file format allows the following column names: "name", "uid" and "code". The command will attempt to match on any specified column/property. Column names are case-sensitive. You must specify at least one column.
+
+Example CSV file:
+
+<pre>
+"name","code"
+"Johns clinic", "Fac021"
+"Bobs dispensary", "Fac015"
+"St Martas hospital","Fac042"
+</pre>
 
 #### Upload custom data entry form
 
