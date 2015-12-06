@@ -17,9 +17,7 @@ const app = {
  * @param json the organisation units to remove.
  */
  app.removeOrgUnits = function(orgUnits) {
-    var obj,
-        prop,
-        props = ['name','code'];
+    var obj, prop, props = ['name','code'];
 
     for (var i=0; i<orgUnits.length; i++) {
         obj = orgUnits[i];

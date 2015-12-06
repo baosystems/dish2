@@ -5,6 +5,9 @@ const conf = require('./configManager.js');
 
 const app = {};
 
+/**
+* Invokes a POST request for a custom form for a data set.
+*/
 app.postDataEntryForm = function() {
   var url = conf.getConf().api.baseUrl + '/dataSets/' + conf.getArgs().dataset + '/customDataEntryForm';
 
@@ -30,6 +33,9 @@ app.postDataEntryForm = function() {
   });
 }
 
+/**
+* Runs command.
+*/
 app.run = function() {
   if (!conf.isArg('dataset') || !conf.isArg('file')) {
     return console.log('Usage: node post_dataentryform --dataset <datasetuid> --file <custom-form-file>');
