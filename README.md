@@ -4,7 +4,7 @@ Dish is a command line tool for interaction with the DHIS 2 Web API. It is suita
 
 ### Installation
 
-Dish is a NPM package and requires *nodejs* and *NPM* to be installed on your local system. You can install Dish with:
+Dish is a NPM [package](https://www.npmjs.com/package/dish2) and requires *nodejs* and *NPM* to be installed on your local system. You can install Dish with:
 
 <pre>npm install dish2 -g</pre>
 
@@ -30,8 +30,6 @@ This config file will be searched for at a location defined by a *DHIS2_HOME* en
 export DHIS2_HOME='/home/dhis/config'
 touch /home/dhis/config/dish.json
 </pre>
-
-NPM package info is found [here](https://www.npmjs.com/package/dish2). Dish is built with [nodejs](https://nodejs.org/).
 
 ### Available commands
 
