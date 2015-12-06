@@ -33,7 +33,6 @@ const app = {
     }
 
     console.log('Process completed!');
-    console.log();
     console.log('Org units deleted: ' + app.deleteCount);
     console.log('Total no of org units: ' + orgUnits.length);
     console.log('Errors occured: ' + app.errorCount);
@@ -56,9 +55,6 @@ app.removeOrgUnit = function(obj,prop) {
         ou = ous.organisationUnits[0];
         delDataUrl = app.pruneUrl + '/' + ou.id;
         delOuUrl = app.orgUnitsUrl + '/' + ou.id;
-
-        console.log('Delete data for org unit URL: ' + delDataUrl);
-        console.log('Delete org unit URL: ' + delOuUrl);
 
         delDataResp = urlsync.request(delDataUrl, conf.getOptions().post);
 
