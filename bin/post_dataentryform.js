@@ -15,11 +15,17 @@ app.postDataEntryForm = function() {
 
     var options = conf.getOptions().post;
     options.data = data;
+    options.headers = {
+      'Content-Type': 'text/html'
+    };
 
-    console.log(data);
-
-    var resp = urllib.request(url, options).then(function(result) {
-      console.log(result);
+    urllib.request(url, options).then(function(result) {
+      if (200 == result.status) {
+        console.log('Form successfully uploaded: ' + conf.getArgs().dataset);
+      }
+      else {
+        console.log('Form could not be uploaded, HTTP status code: ' + result.status);
+      }
     });
   });
 }
