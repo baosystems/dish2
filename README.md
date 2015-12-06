@@ -54,7 +54,13 @@ The following commands are available.
 
 The *dish_remove_org_units* command will remove a batch of organisation units, including associated complete data set registrations, data approvals and data values. It reads organisation units from a CSV file. It requires that the authenticated DHIS 2 user has the "ALL" authority in order to delete data values and at least the "delete organisation units" authority in order to delete organisation units.
 
-<pre>dish_remove_org_units --file &lt;name-of-org-unit-csv-file&gt;</pre>
+<pre>dish_remove_org_units --file &lt;path-to-org-unit-csv-file&gt;</pre>
+
+#### Upload custom data entry form
+
+The *dish_post_custom_form* command will upload a custom HTML data entry form from a file for a given data set in the DHIS 2 instance.
+
+<pre>dish_post_custom_form --dataset &lt;dataset-uid&gt; --file &lt;path-to-custom-form-file&gt;</pre>
 
 #### Generate analytics tables
 
