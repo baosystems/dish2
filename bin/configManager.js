@@ -1,13 +1,6 @@
 /**
- * Dish config manager.
- *
- * The script requires nodejs depends on these libraries:
- *
- * npm install csvtojson
- * npm install urllib-sync
- * npm install yargs
+ * Dish configuration manager.
  */
-
 const fs = require('fs');
 const argv = require('yargs').argv;
 
