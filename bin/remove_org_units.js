@@ -105,8 +105,7 @@ app.convertCsvToJson = function(doneFn) {
 */
 app.run = function() {
   if (!conf.isArg('file')) {
-    console.log('Usage: node remove_org_units.js --file <name-of-org-unit-csv-file>');
-    return;
+    return console.log('Usage: node remove_org_units.js --file <name-of-org-unit-csv-file>');
   }
 
   app.convertCsvToJson(app.removeOrgUnits);

@@ -32,8 +32,7 @@ app.postDataEntryForm = function() {
 
 app.run = function() {
   if (!conf.isArg('dataset') || !conf.isArg('file')) {
-    console.log('Usage: node post_dataentryform --dataset <datasetuid> --file <custom-form-file>');
-    return;
+    return console.log('Usage: node post_dataentryform --dataset <datasetuid> --file <custom-form-file>');
   }
 
   app.postDataEntryForm();
