@@ -58,6 +58,18 @@ The *dish_post_custom_form* command will upload a custom HTML data entry form fr
 
 <pre>dish_post_custom_form --dataset &lt;dataset-uid&gt; --file &lt;path-to-custom-form-file&gt;</pre>
 
+#### Upload custom Javascript
+
+The *dish_post_js* command will upload a custom Javascript file using the *files/script* Web API resource.
+
+<pre>dish_post_js --file &lt;path-to-javascript-file&gt;</pre>
+
+#### Upload custom CSS
+
+The *dish_post_js* command will upload a custom CSS file using the *files/style* Web API resource.
+
+<pre>dish_post_css --file &lt;path-to-css-file&gt;</pre>
+
 #### Generate analytics tables
 
 The *dish_gen_analytics_tables* command will initiate the analytics table generation process.
