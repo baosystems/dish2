@@ -66,6 +66,35 @@ exports.isArg = function(arg) {
 }
 
 /**
+* Invokes a POST request.
+* @param url the URL to post to.
+* @param file the path to the file with the content to include as request payload.
+* @param contentType the content type for the HTTP request.
+*/
+exports.postFile = function(url, file, contentType) {
+  fs.readFile(file, 'utf8', function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+
+    var options = conf.getOptions().post;
+    options.data = data;
+    options.headers = {
+      'Content-Type': contentType
+    };
+
+    urllib.request(url, options).then(function(result) {
+      if (200 == result.status || 201 == result.status) {
+        console.log('Content successfully uploaded: ' + conf.getArgs().dataset);
+      }
+      else {
+        console.log('Content could not be uploaded, HTTP status code: ' + result.status);
+      }
+    });
+  });
+}
+
+/**
 * Initalizes configuration.
 */
 initAndGetConf = function() {
