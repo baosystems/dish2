@@ -100,15 +100,20 @@ exports.postFile = function(url, file, contentType) {
 * Initalizes configuration.
 */
 initAndGetConf = function() {
-  var loc = process.env.DHIS2_HOME;
+  var dhisHome = process.env.DHIS2_HOME,
+      osHome = process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
 
-  if (loc) {
-    configLocation = loc + '/' + configFilename;
-    console.log('DHIS2_HOME environment variable pointing to: ' + loc);
+  if (dhisHome) {
+    configLocation = dhisHome + '/' + configFilename;
+    console.log('Using DHIS2_HOME environment variable pointing to: ' + configLocation);
+  }
+  else if (osHome) {
+    configLocation = osHome + '/' + configFilename;
+    console.log('Using your home directory which seems to be: ' + configLocation);
   }
   else {
     configLocation = configFilename;
-    console.log('Warning, DHIS2_HOME environment variable not set, using default config location');
+    console.log('Falling back to default config location: ' + configLocation);
   }
 
   try {
