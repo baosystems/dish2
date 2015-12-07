@@ -2,6 +2,7 @@
  * Dish configuration manager.
  */
 const fs = require('fs');
+const urllib = require('urllib');
 const argv = require('yargs').argv;
 
 var config,

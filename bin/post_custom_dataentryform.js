@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-const fs = require('fs');
-const urllib = require('urllib');
 const conf = require('./configManager.js');
 
 const app = {};
