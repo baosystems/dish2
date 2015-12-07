@@ -86,7 +86,7 @@ exports.postFile = function(url, file, contentType) {
     options.data = data;
 
     urllib.request(url, options).then(function(result) {
-      if (200 == result.status) {
+      if (200 == result.status || 201 == result.status) {
         console.log('Content successfully uploaded');
       }
       else {
