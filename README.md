@@ -24,7 +24,7 @@ Dish is configured through a *dish.json* configuration file which must be a vali
 }
 </pre>
 
-This configuration file will be searched for at a location defined by a *DHIS2_HOME* environment variable (borrowed from the DHIS 2 setup). If not found, your home directory will be searched. Place the dish.json file in the desired directory.
+This configuration file will be searched for at a location defined by a *DHIS2_HOME* environment variable (borrowed from the DHIS 2 setup). If not found, your home directory will be searched. Place the *dish.json* file in the desired directory.
 
 <pre>
 export DHIS2_HOME='/home/dhis/config'
