@@ -25,6 +25,7 @@
     "dish_remove_org_units": "bin/remove_org_units.js",
     "dish_post_custom_form": "bin/post_custom_dataentryform.js",
     "dish_post_js": "bin/post_js.js",
+    "dish_post_css": "bin/post_css.js",
     "dish_gen_analytics_tables": "bin/generate_analytics_tables.js",
     "dish_gen_resource_tables": "bin/generate_resource_tables.js"
   },
