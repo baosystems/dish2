@@ -27,7 +27,8 @@
     "dish_post_js": "bin/post_js.js",
     "dish_post_css": "bin/post_css.js",
     "dish_gen_analytics_tables": "bin/generate_analytics_tables.js",
-    "dish_gen_resource_tables": "bin/generate_resource_tables.js"
+    "dish_gen_resource_tables": "bin/generate_resource_tables.js",
+    "dish_run_integrity_checks": "bin/run_integrity_checks.js"
   },
   "bugs": {
     "url": "https://github.com/baosystems/dish2/issues"
