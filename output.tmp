@@ -109,10 +109,22 @@
       "violations": 30
     },
     {
-      "description": "Organisation units with no parent except Global. Should be none.",
-      "url": "https://www.datim.org/api/sqlViews/VWbDNmW7LIL/data.json",
+      "description": "Organisation units coordinates must conform to the GeoJSON specification and not have blank coordinates for either lat or longitude.",
+      "url": "https://www.datim.org/api/sqlViews/WmuVdJBhZlM/data.json",
+      "status": "FAILED",
+      "violations": 7687
+    },
+    {
+      "description": "All point coordinates should be within a valid range of coordiantes for the EPSG 4326 coordinate system.",
+      "url": "https://www.datim.org/api/sqlViews/D2KXegAKxSI/data.json",
       "status": "FAILED",
       "violations": 1
+    },
+    {
+      "description": "In certain cases, organisation units coordinates may contain invisible unicode characters. This should not be allowed.",
+      "url": "https://www.datim.org/api/sqlViews/rB9lc9IHrvk/data.json",
+      "status": "FAILED",
+      "violations": 4
     },
     {
       "description": "",
@@ -124,7 +136,13 @@
       "description": "All organisation units must be a member of an organisation unit group in DATIM.",
       "url": "https://www.datim.org/api/sqlViews/kdd3bt77rIh/data.json",
       "status": "FAILED",
-      "violations": 2988
+      "violations": 2987
+    },
+    {
+      "description": "In general, point coordinates should be specified with 4 digits of precision.",
+      "url": "https://www.datim.org/api/sqlViews/vaoXSjkCDhm/data.json",
+      "status": "FAILED",
+      "violations": 8007
     },
     {
       "description": "Partner users user groups which are not shared with at least one partner, agency, country and global user administrators group. Should be none.",
@@ -142,37 +160,13 @@
       "description": "Users with SIMS Key Populations user role with no SIMS Key Populations access user group.",
       "url": "https://www.datim.org/api/sqlViews/ne3fAXVA5gn/data.json",
       "status": "FAILED",
-      "violations": 2
+      "violations": 1
     },
     {
       "description": "Users which have the user administrator role but no user administrator user group. Should be none.",
       "url": "https://www.datim.org/api/sqlViews/sDwnsGOi4xj/data.json",
       "status": "FAILED",
-      "violations": 5
-    },
-    {
-      "description": "Users which have data entry SI national level user role but not data SI access user group. Should be none.",
-      "url": "https://www.datim.org/api/sqlViews/MxbbMkypSFE/data.json",
-      "status": "FAILED",
-      "violations": 1
-    },
-    {
-      "description": "Users which have data entry SI user role but not data SI access user group. Should be none.",
-      "url": "https://www.datim.org/api/sqlViews/Rs1ykbjmoqN/data.json",
-      "status": "FAILED",
-      "violations": 1
-    },
-    {
-      "description": "Users which have data entry SIMS user role but not data SIMS access user group. Should be none.",
-      "url": "https://www.datim.org/api/sqlViews/Cz1U3gP6JQ2/data.json",
-      "status": "FAILED",
-      "violations": 1
-    },
-    {
-      "description": "Validation rules for SI which have expressions not set to NEVER_SKIP. Should be none.",
-      "url": "https://www.datim.org/api/sqlViews/xmrXUTi9x3Z/data.json",
-      "status": "FAILED",
-      "violations": 1
+      "violations": 4
     }
   ],
   "successful": [
@@ -342,6 +336,11 @@
       "status": "SUCCESSFUL"
     },
     {
+      "description": "Organisation units with no parent except Global. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/VWbDNmW7LIL/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
       "description": "Partner users which are member of user administrators group or all mechanisms group but not users group. Should be none.",
       "url": "https://www.datim.org/api/sqlViews/vJotmLGBeBg/data.json",
       "status": "SUCCESSFUL"
@@ -397,8 +396,28 @@
       "status": "SUCCESSFUL"
     },
     {
+      "description": "Users which have data entry SI national level user role but not data SI access user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/MxbbMkypSFE/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Users which have data entry SI user role but not data SI access user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/Rs1ykbjmoqN/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Users which have data entry SIMS user role but not data SIMS access user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/Cz1U3gP6JQ2/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
       "description": "Users which have category option group sets as dimension constraints. Should be none.",
       "url": "https://www.datim.org/api/sqlViews/Et5FeFjKuyy/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Validation rules for SI which have expressions not set to NEVER_SKIP. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/xmrXUTi9x3Z/data.json",
       "status": "SUCCESSFUL"
     }
   ]

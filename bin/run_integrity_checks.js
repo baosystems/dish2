@@ -70,25 +70,32 @@ app.run = function() {
 
     var response = urlsync.request(url, conf.getOptions().get);
     var data = response.data;
-    var json = JSON.parse(data.toString('utf8'));
 
     var result = {};
     result.description = sqlView.description;
     result.url = url;
 
-    if (json.rows && json.rows.length > 0) {
-      result.status = 'FAILED';
-      result.violations = json.rows.length;
-      app.violatedChecks++;
-      app.violatedRows += json.rows.length;
-      app.results.failed.push(result);
+    if (200 == response.status) {
+      var json = JSON.parse(data.toString('utf8'));
+
+      if (json.rows && json.rows.length > 0) {
+        result.status = 'FAILED';
+        result.violations = json.rows.length;
+        app.violatedChecks++;
+        app.violatedRows += json.rows.length;
+        app.results.failed.push(result);
+      }
+      else {
+        result.status = 'SUCCESSFUL';
+        app.results.successful.push(result);
+      }
     }
     else {
-      result.status = 'SUCCESSFUL';
-      app.results.successful.push(result);
+      result.status = 'ERROR';
+      result.message = 'The SQL view failed to generate, check the logs';
     }
 
-    console.log('Got results for check: ' + sqlView.name + ', violations: '  + json.rows.length);
+    console.log('Got results for check: ' + sqlView.name + ', violations: '  + json.rows.length + ', HTTP status: ' + response.status);
   }
 
   console.log('Writing integrity check results');
