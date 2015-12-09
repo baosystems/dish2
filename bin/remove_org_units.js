@@ -45,40 +45,40 @@ app.removeOrgUnits = function(orgUnits) {
  * @returns {boolean} true if the org unit was deleted, false otherwise.
  */
 app.removeOrgUnit = function(obj,prop) {
-    var ouResp, ous, ou, delUrl, delResp;
-    var url = app.orgUnitsUrl + '.json?paging=false&filter=' + prop + ':eq:' + obj[prop];
+  var ouResp, ous, ou, delUrl, delResp;
+  var url = app.orgUnitsUrl + '.json?paging=false&filter=' + prop + ':eq:' + obj[prop];
 
-    ouResp = urlsync.request(url, conf.getOptions().get);
-    ous = JSON.parse(ouResp.data.toString('utf8'));
+  ouResp = urlsync.request(url, conf.getOptions().get);
+  ous = JSON.parse(ouResp.data.toString('utf8'));
 
-    if (ous && ous.organisationUnits && ous.organisationUnits[0]) {
-        ou = ous.organisationUnits[0];
-        delDataUrl = app.pruneUrl + '/' + ou.id;
-        delOuUrl = app.orgUnitsUrl + '/' + ou.id;
+  if (ous && ous.organisationUnits && ous.organisationUnits[0]) {
+    ou = ous.organisationUnits[0];
+    delDataUrl = app.pruneUrl + '/' + ou.id;
+    delOuUrl = app.orgUnitsUrl + '/' + ou.id;
 
-        delDataResp = urlsync.request(delDataUrl, conf.getOptions().post);
+    delDataResp = urlsync.request(delDataUrl, conf.getOptions().post);
 
-        if (delDataResp && 200 == delDataResp.status) {
-          console.log('Data for org unit successfully deleted: ' + ou.id + ', ' + ou.name);
-        }
-        else {
-          console.log('Data for org unit could not be deleted: ' + ou.id + ', ' + ou.name);
-        }
-
-        delOuResp = urlsync.request(delOuUrl, conf.getOptions().delete);
-
-        if (delOuResp && 204 == delOuResp.status) {
-            console.log('Org unit successfully deleted: ' + ou.id + ', ' + ou.name);
-            app.deleteCount++;
-            return true;
-        }
-        else {
-            console.log('Org unit could not be deleted: ' + ou.id + ', ' + ou.name);
-            app.errorCount++;
-        }
+    if (delDataResp && 200 == delDataResp.status) {
+      console.log('Data for org unit successfully deleted: ' + ou.id + ', ' + ou.name);
     }
     else {
-        console.log('Org unit not found: "' + obj.name + '" using prop: "' + prop + '"');
+      console.log('Data for org unit could not be deleted: ' + ou.id + ', ' + ou.name);
+    }
+
+    delOuResp = urlsync.request(delOuUrl, conf.getOptions().delete);
+
+    if (delOuResp && 204 == delOuResp.status) {
+      console.log('Org unit successfully deleted: ' + ou.id + ', ' + ou.name);
+      app.deleteCount++;
+      return true;
+    }
+    else {
+      console.log('Org unit could not be deleted: ' + ou.id + ', ' + ou.name);
+      app.errorCount++;
+    }
+  }
+  else {
+      console.log('Org unit not found: "' + obj.name + '" using prop: "' + prop + '"');
         app.notFoundCount++;
     }
 
