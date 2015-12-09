@@ -1,0 +1,405 @@
+{
+  "failed": [
+    {
+      "description": "Agency and partner users without dimension restrictions. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/eZeqUgYv19H/data.json",
+      "status": "FAILED",
+      "violations": 2
+    },
+    {
+      "description": "Agency users which are member of user administrators group or all mechanisms group but not users group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/Gc9N6HIz7lj/data.json",
+      "status": "FAILED",
+      "violations": 1
+    },
+    {
+      "description": "Get category combos with categories which share the same category options",
+      "url": "https://www.datim.org/api/sqlViews/nJO575xAcGT/data.json",
+      "status": "FAILED",
+      "violations": 1
+    },
+    {
+      "description": "Category options without categories. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/iBkBnZaH0wX/data.json",
+      "status": "FAILED",
+      "violations": 3
+    },
+    {
+      "description": "Country team users with SI data entry authority but without data acceptance and submission from lower levels. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/QVmcuvdE5M3/data.json",
+      "status": "FAILED",
+      "violations": 246
+    },
+    {
+      "description": "Country team users with dimension restriction. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/GOwCpAincdZ/data.json",
+      "status": "FAILED",
+      "violations": 9
+    },
+    {
+      "description": "Data element groups with public read or write access. None should have public access except for SOP.",
+      "url": "https://www.datim.org/api/sqlViews/ThpUIaToLJc/data.json",
+      "status": "FAILED",
+      "violations": 1
+    },
+    {
+      "description": "Data elements with public read or write acess. None should have public access except for SOP.",
+      "url": "https://www.datim.org/api/sqlViews/x4sWzKtpJpM/data.json",
+      "status": "FAILED",
+      "violations": 207
+    },
+    {
+      "description": "Data elements for SI which are not shared with Data SI access user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/OZ3puLTbGib/data.json",
+      "status": "FAILED",
+      "violations": 93
+    },
+    {
+      "description": "Data elements which are not shared with any user groups. None should be not shared except for SOP.",
+      "url": "https://www.datim.org/api/sqlViews/l9oM5U4Ex7I/data.json",
+      "status": "FAILED",
+      "violations": 93
+    },
+    {
+      "description": "Data sets for MER which are not shared with Data SI access user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/tLEYwsD3S04/data.json",
+      "status": "FAILED",
+      "violations": 4
+    },
+    {
+      "description": "Data sets not linked to funding mechanism category combo. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/NsHTmVrqISc/data.json",
+      "status": "FAILED",
+      "violations": 5
+    },
+    {
+      "description": "Data sets with public read or write access. None should have public access.",
+      "url": "https://www.datim.org/api/sqlViews/BStTD4giiJ5/data.json",
+      "status": "FAILED",
+      "violations": 4
+    },
+    {
+      "description": "Duplicate partner user groups within an OU based on the partner identifier. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/pPo3uWVn2ij/data.json",
+      "status": "FAILED",
+      "violations": 7
+    },
+    {
+      "description": "Duplicate case insensitive user group names. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/oN3C2snfVY0/data.json",
+      "status": "FAILED",
+      "violations": 19
+    },
+    {
+      "description": "Where a data element reference in a MER data set is present in the data set's form, but one or more of the data element's category option combos are not present in the form. This view also shows how many database values have that element/combo, and where they are by OU and period start date.",
+      "url": "https://www.datim.org/api/sqlViews/GEBFn8akwnk/data.json",
+      "status": "FAILED",
+      "violations": 924
+    },
+    {
+      "description": "Where a data element reference in a MER data set is not present in the data set's form, but one or more of the data element's category option combos are not present in the form",
+      "url": "https://www.datim.org/api/sqlViews/fvCIzsUMHD3/data.json",
+      "status": "FAILED",
+      "violations": 6
+    },
+    {
+      "description": "Mechanisms, category option groups, data elements, data sets which are not shared with Global Metadata Administrators. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/apS2HblQqGK/data.json",
+      "status": "FAILED",
+      "violations": 30
+    },
+    {
+      "description": "Organisation units with no parent except Global. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/VWbDNmW7LIL/data.json",
+      "status": "FAILED",
+      "violations": 1
+    },
+    {
+      "description": "",
+      "url": "https://www.datim.org/api/sqlViews/hzhC89zmT89/data.json",
+      "status": "FAILED",
+      "violations": 3326
+    },
+    {
+      "description": "All organisation units must be a member of an organisation unit group in DATIM.",
+      "url": "https://www.datim.org/api/sqlViews/kdd3bt77rIh/data.json",
+      "status": "FAILED",
+      "violations": 2988
+    },
+    {
+      "description": "Partner users user groups which are not shared with at least one partner, agency, country and global user administrators group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/PjgVuGw94w8/data.json",
+      "status": "FAILED",
+      "violations": 118
+    },
+    {
+      "description": "Partners and agencies which are not shared with any user groups. None should be not shared.",
+      "url": "https://www.datim.org/api/sqlViews/ymq3HIcwXja/data.json",
+      "status": "FAILED",
+      "violations": 28
+    },
+    {
+      "description": "Users with SIMS Key Populations user role with no SIMS Key Populations access user group.",
+      "url": "https://www.datim.org/api/sqlViews/ne3fAXVA5gn/data.json",
+      "status": "FAILED",
+      "violations": 2
+    },
+    {
+      "description": "Users which have the user administrator role but no user administrator user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/sDwnsGOi4xj/data.json",
+      "status": "FAILED",
+      "violations": 5
+    },
+    {
+      "description": "Users which have data entry SI national level user role but not data SI access user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/MxbbMkypSFE/data.json",
+      "status": "FAILED",
+      "violations": 1
+    },
+    {
+      "description": "Users which have data entry SI user role but not data SI access user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/Rs1ykbjmoqN/data.json",
+      "status": "FAILED",
+      "violations": 1
+    },
+    {
+      "description": "Users which have data entry SIMS user role but not data SIMS access user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/Cz1U3gP6JQ2/data.json",
+      "status": "FAILED",
+      "violations": 1
+    },
+    {
+      "description": "Validation rules for SI which have expressions not set to NEVER_SKIP. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/xmrXUTi9x3Z/data.json",
+      "status": "FAILED",
+      "violations": 1
+    }
+  ],
+  "successful": [
+    {
+      "description": "Additional default category option combos based on category combo. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/vidK1FXh2q1/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Additional default category option combos based on category option. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/WaTzHT9ueb7/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Agencies without a valid code on format \"Agency_{name}\". Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/UZNhz6Sdslb/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Agency users user groups which are not shared with at least one agency, country and global user administrators group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/BwowgLn2of5/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Categories with more than one membership for a category combination. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/q9zagLNHZgv/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Categories without category combos (not an error but could be removed). Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/cTYZo8I3dx7/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Categories without category options. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/MtvAwE3XndC/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Category combos without categories. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/fFvb5nuUv7B/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Category option combos members of more than one category combo. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/kOHS94kJmNL/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Category option combos without category combo. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/dwz2IX7gER8/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Category option combos without category options. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/t6N6GimJyos/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Category options with more than one membership for a category. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/IGjn8JnUEJO/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Category options without category option combos. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/T5qJp14Hy8J/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "County users user groups which are not shared with at least one country and global user administrators group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/jnThFFypDPj/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Data elements for SIMS Key Pop which are not shared with Data SIMS Key Populations access user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/Dv3Xxpb4Cw1/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Data elements for SIMS which are not shared with Data SIMS access user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/plsf7OGQGCn/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Data sets for EA which are not shared with Data EA access user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/tOIDV1ZaEH0/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Data sets for SIMS Key Pops which are not shared with Data SIMS Key Populations access user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/qpE02KeNNTn/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Data sets for SIMS which are not shared with Data SIMS access user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/vvT68r2T7GE/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "All data sets should have defined frequency. This SQL view should return no rows if all datasets have the correct frequency. The SQL view will need to be updated with new cases as datasets are added.",
+      "url": "https://www.datim.org/api/sqlViews/uYp5FeXrxaB/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Data element groups for EA which are not shared with Data EA access user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/kBjbK3Quh2e/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Mechanism category list of options with missing indexes. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/TvbHxLU22yO/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Mechanisms linked to more than one agency. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/ZTTKThjWSJN/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Mechanisms linked to more than one partner. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/tS7ppNsZvDu/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Mechanisms not assigned to exactly one PEPFAR OU (level 3 org unit). Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/TrhzWg2Oans/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Mechanisms not linked to exactly 1 option combo (assumes mechanism name starts with at least 3 digits).",
+      "url": "https://www.datim.org/api/sqlViews/T4G0RVeTkq9/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Mechanisms not linked to any agency. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/uxsQA6KLuph/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Mechanisms not linked to any partners. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/W12TmCljPGH/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Mechanisms which are not shared with any user groups. None should be not shared.",
+      "url": "https://www.datim.org/api/sqlViews/wkYXE2vWJhD/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Mechanisms with public read or write access. None should have public access.",
+      "url": "https://www.datim.org/api/sqlViews/aALcKpa2GL7/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Objects which have no created or last updated timestamp. All should have a created and timestamp.",
+      "url": "https://www.datim.org/api/sqlViews/i3I15TeqERU/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Objects which have no userid or public access. All should have a userid and public access.",
+      "url": "https://www.datim.org/api/sqlViews/DRRwyPyYMLQ/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Select level if number of org unit levels is different from 9.",
+      "url": "https://www.datim.org/api/sqlViews/b9EHPhiRyW2/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Partner users which are member of user administrators group or all mechanisms group but not users group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/vJotmLGBeBg/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Partners and agencies with public read or write acess. None should have public access.",
+      "url": "https://www.datim.org/api/sqlViews/SiW9L6uEbou/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Partner with no corresponding users and all mechanisms user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/iFED0MI7Dzk/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Partners without a valid code on format \"Partner_{ID}\". Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/BkBueBk0xvl/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Data element groups for SI which are not shared with Data SI access user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/tRyp7lMd0KR/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Data element groups for SIMS which are not shared with Data SIMS access user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/Th3ictC4alY/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Data element groups for SIMS Key Populations which are not shared with Data SIMS Key Populations access user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/P3ASyvlRyFh/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Target data elements which are members of results data sets. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/q5HVFosnSoK/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Users sometimes mistakenly add new root organisation units, which end up at the OU3 level. This should not be allowed. ",
+      "url": "https://www.datim.org/api/sqlViews/odjrislVBkl/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Users which are not linked to exactly one data capture or data view org unit. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/uMbmgR6Thwu/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Users which have data entry EA user role but not data EA access user group. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/o2y8QzP3zJe/data.json",
+      "status": "SUCCESSFUL"
+    },
+    {
+      "description": "Users which have category option group sets as dimension constraints. Should be none.",
+      "url": "https://www.datim.org/api/sqlViews/Et5FeFjKuyy/data.json",
+      "status": "SUCCESSFUL"
+    }
+  ]
+}

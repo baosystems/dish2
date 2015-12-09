@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const conf = require('./configManager.js');
 const urlsync = require('urllib-sync');
+const fs = require('fs');
 
 /*
  * The flow of the command:
