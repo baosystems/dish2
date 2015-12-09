@@ -120,7 +120,7 @@ initAndGetConf = function() {
     configFile = fs.readFileSync(configLocation, 'utf8');
   }
   catch (ex) {
-    throw new Error('Configuration file "conf.json" was not found or could not be parsed');
+    throw new Error('Configuration file "dish.json" was not found or could not be parsed');
   }
 
   config = JSON.parse(configFile);
