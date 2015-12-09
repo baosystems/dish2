@@ -22,7 +22,8 @@ const app = {
   resultsFilename: 'output.tmp',
   results: {
     failed: [],
-    successful: []
+    errors: [],
+    successful: [],
   },
   violatedChecks: 0,
   violatedRows: 0
@@ -93,6 +94,7 @@ app.run = function() {
     else {
       result.status = 'ERROR';
       result.message = 'The SQL view failed to generate, check the logs';
+      app.results.errors.push(result);
     }
 
     console.log('Got results for check: ' + sqlView.name + ', violations: '  + json.rows.length + ', HTTP status: ' + response.status);

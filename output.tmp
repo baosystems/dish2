@@ -169,6 +169,7 @@
       "violations": 4
     }
   ],
+  "errors": [],
   "successful": [
     {
       "description": "Additional default category option combos based on category combo. Should be none.",
