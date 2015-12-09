@@ -16,26 +16,26 @@ const app = {
  * Removes org units provided as the given json structure.
  * @param json the organisation units to remove.
  */
- app.removeOrgUnits = function(orgUnits) {
-    var obj,
-        prop,
-        props = ['id','name','code'];
+app.removeOrgUnits = function(orgUnits) {
+  var obj,
+      prop,
+      props = ['id','name','code'];
 
-    for (var i=0; i<orgUnits.length; i++) {
-        obj = orgUnits[i];
+  for (var i=0; i<orgUnits.length; i++) {
+    obj = orgUnits[i];
 
-        for (var j=0; j<props.length; j++) {
-            prop = props[j];
-            if (obj.hasOwnProperty(prop) && app.removeOrgUnit(obj,prop)) {
-                break;
-            }
-        }
+    for (var j=0; j<props.length; j++) {
+      prop = props[j];
+      if (obj.hasOwnProperty(prop) && app.removeOrgUnit(obj,prop)) {
+        break;
+      }
     }
+  }
 
-    console.log('Process completed!');
-    console.log('Org units deleted: ' + app.deleteCount);
-    console.log('Total no of org units: ' + orgUnits.length);
-    console.log('Errors occured: ' + app.errorCount);
+  console.log('Process completed!');
+  console.log('Org units deleted: ' + app.deleteCount);
+  console.log('Total no of org units: ' + orgUnits.length);
+  console.log('Errors occured: ' + app.errorCount);
 }
 
 /**
