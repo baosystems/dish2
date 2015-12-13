@@ -10,10 +10,10 @@ app.generateResourceTables = function() {
   var resp = urlsync.request(app.resourceTableUrl, conf.getOptions().post);
 
   if (200 == resp.status) {
-    console.log('Resource table generation process started!');
+    console.log('Resource tables generation started!');
   }
   else {
-    console.log('Resource table generation could not be initiated, HTTP status: ' + resp.status);
+    console.log('Resource tables generation could not be initiated, HTTP status: ' + resp.status);
   }
 }
 

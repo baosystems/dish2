@@ -10,10 +10,10 @@ app.generateAnalyticsTables = function() {
   var resp = urlsync.request(app.analyticsTableUrl, conf.getOptions().post);
 
   if (200 == resp.status) {
-    console.log('Analytics table generation could not be initiated');
+    console.log('Analytics tables generation started!');
   }
   else {
-    console.log('Analytics table generation could not be initiated, HTTP status: ' + resp.status);
+    console.log('Analytics tables generation could not be initiated, HTTP status: ' + resp.status);
   }
 }
 
