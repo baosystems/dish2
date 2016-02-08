@@ -1,6 +1,6 @@
 # Dish
 
-Dish is a command line tool for interaction with the DHIS 2 Web API. It is suitable for handling batch metadata operations, system maintenance operations and more.
+Dish is a command line tool for interaction with the DHIS 2 Web API. It aims at simplifying common operations and is suitable for handling batch metadata operations, system maintenance operations and more.
 
 ### Installation
 
