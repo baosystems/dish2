@@ -78,22 +78,11 @@ app.removeOrgUnit = function(obj,prop) {
     }
   }
   else {
-      console.log('Org unit not found: "' + obj.name + '" using prop: "' + prop + '"');
-        app.notFoundCount++;
-    }
+    console.log('Org unit not found: "' + obj.name + '" using prop: "' + prop + '"');
+      app.notFoundCount++;
+  }
 
-    return false;
-}
-
-/**
- * Reads the CSV file and converts the content to JSON.
- * @param doneFn callback to apply with the JSON structure.
- */
-app.convertCsvToJson = function(doneFn) {
-    var Converter = require('csvtojson').Converter;
-    var converter = new Converter({});
-    converter.on('end_parsed', doneFn);
-    fs.createReadStream(conf.getArgs().file).pipe(converter);
+  return false;
 }
 
 /**
@@ -104,7 +93,7 @@ app.run = function() {
     return console.log('Usage: node remove_org_units.js --file <name-of-org-unit-csv-file>');
   }
 
-  app.convertCsvToJson(app.removeOrgUnits);
+  conf.convertCsvToJson(app.removeOrgUnits);
 }
 
 app.run();

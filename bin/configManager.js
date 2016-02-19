@@ -67,6 +67,17 @@ exports.isArg = function(arg) {
 }
 
 /**
+ * Reads the CSV file and converts the content to JSON.
+ * @param doneFn callback to apply with the JSON structure.
+ */
+exports.convertCsvToJson = function(doneFn) {
+    var Converter = require('csvtojson').Converter;
+    var converter = new Converter({});
+    converter.on('end_parsed', doneFn);
+    fs.createReadStream(this.getArgs().file).pipe(converter);
+}
+
+/**
 * Invokes a POST request.
 * @param url the URL to post to.
 * @param file the path to the file with the content to include as request payload.
