@@ -12,7 +12,7 @@ The "-g" global option will ensure that you can invoke the available Dish comman
 
 ### Configuration
 
-Dish is configured through a *dish.json* configuration file which must be a valid JSON object. Example configuration:
+Dish is configured through a *dish.json* configuration file which must be a valid JSON object. Note that the protocol (e.g. http://) is mandatory for the base URL. Example configuration:
 
 <pre>
 {
