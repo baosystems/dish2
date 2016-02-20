@@ -63,10 +63,10 @@ The CSV file format allows for the following column names: "trackedEntity", "org
 Example CSV file:
 
 <pre>
-trackedEntity,orgUnit,QZO9afZwgtb,CkPE4ap6k6y,YpkMB1YsgyS
-ahvFNubg3F5,v29iD7vYdpE,10196410140911,11,agfield
-ahvFNubg3F6,v29iD7vYdpE,10196410140073,54,agfield
-ahvFNubg3F7,v29iD7vYdpE,10196410140072,68,agfield
+"trackedEntity","orgUnit","QZO9afZwgtb","CkPE4ap6k6y","YpkMB1YsgyS"
+"ahvFNubg3F5","v29iD7vYdpE","10196410140911","11","agfield"
+"ahvFNubg3F6","v29iD7vYdpE","10196410140073","54","agfield"
+"ahvFNubg3F7","v29iD7vYdpE","10196410140072","68","agfield"
 </pre>
 
 #### Upload custom data entry form
