@@ -2,6 +2,7 @@
 const csvtojson = require('csvtojson');
 const fs = require('fs');
 const urllib = require('urllib');
+const prettyjson = require('prettyjson');
 const conf = require('./configManager.js');
 
 const app = {
@@ -16,13 +17,23 @@ app.postTeis = function(teis) {
   var data = app.getTeis(teis);
 
   var options = conf.getOptions().post;
-  options.data = data;
+  options.content = JSON.stringify(data);
   options.headers = {
     'Content-Type': 'application/json'
   };
 
-  urllib.request(app.teisUrl, options).then(function(result) {
-    console.log(result);
+  urllib.request(app.teisUrl, options, function(err, data, result) {
+    var resp = JSON.parse(data.toString('utf8'));
+
+    if (200 == result.status || 201 == result.status) {
+      console.log('Tracked entity instances successfully uploaded. Import summary:');
+      console.log(prettyjson.render(resp));
+    }
+    else {
+      console.log('Tracked entity instances could not be uploaded');
+      console.log('HTTP status code: ' + result.status);
+      console.log('Error: ' + err)
+    }
   });
 }
 
@@ -69,7 +80,7 @@ app.getTeis = function(teis) {
 */
 app.run = function() {
   if (!conf.isArg('file')) {
-    return console.log('Usage: node remove_tracked_entity_instances.js --file <name-of-tei-file>');
+    return console.log('Usage: node post_tracked_entity_instances.js --file <name-of-tei-file>');
   }
 
   conf.convertCsvToJson(app.postTeis);
