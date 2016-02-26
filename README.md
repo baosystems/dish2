@@ -52,6 +52,23 @@ Example CSV file:
 "St Martas hospital","Fac042"
 </pre>
 
+#### Import tracked entity instances
+
+The *dish_post_tracked_entity_instances* command will import a batch of tracked entity instances, including tracked entity, organisation unit and attributes. It reads input from a CSV file.
+
+<pre>dish_post_tracked_entity_instances --file &lt;path-to-tei-csv-file&gt;</pre>
+
+The CSV file format allows for the following column names: "trackedEntity", "orgUnit", and UIDs for tracked entity attributes. The "trackedEntity" column refers to the UID of the tracked entity, the "orgUnit" column refers to the UID of the organisation unit and the attribute columns may contain corresponding attribute values.
+
+Example CSV file:
+
+<pre>
+"trackedEntity","orgUnit","QZO9afZwgtb","CkPE4ap6k6y","YpkMB1YsgyS"
+"ahvFNubg3F5","v29iD7vYdpE","10196410140911","11","agfield"
+"ahvFNubg3F6","v29iD7vYdpE","10196410140073","54","agfield"
+"ahvFNubg3F7","v29iD7vYdpE","10196410140072","68","agfield"
+</pre>
+
 #### Upload custom data entry form
 
 The *dish_post_custom_form* command will upload a custom HTML data entry form from a file for a given data set.
