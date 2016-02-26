@@ -22,6 +22,8 @@ app.postTeis = function(teis) {
     'Content-Type': 'application/json'
   };
 
+  console.log('Uploading tracked entity instances..');
+
   urllib.request(app.teisUrl, options, function(err, data, result) {
     var resp = JSON.parse(data.toString('utf8'));
 
