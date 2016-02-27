@@ -16,6 +16,10 @@ const app = {
 app.postTeis = function(teis) {
   var data = app.getTeis(teis);
 
+  if (conf.isArg('output')) {
+    fs.writeFile(conf.getArgs().output, JSON.stringify(data));
+  }
+
   var options = conf.getOptions().post;
   options.content = JSON.stringify(data);
   options.headers = {
@@ -25,9 +29,9 @@ app.postTeis = function(teis) {
   console.log('Uploading tracked entity instances..');
 
   urllib.request(app.teisUrl, options, function(err, data, result) {
-    var resp = JSON.parse(data.toString('utf8'));
 
     if (200 == result.status || 201 == result.status) {
+      var resp = JSON.parse(data.toString('utf8'));
       console.log('Tracked entity instances successfully uploaded. Import summary:');
       console.log(prettyjson.render(resp));
     }
@@ -84,6 +88,8 @@ app.run = function() {
   if (!conf.isArg('file')) {
     return console.log('Usage: node post_tracked_entity_instances.js --file <name-of-tei-file>');
   }
+
+  console.log('Parsing CSV file..');
 
   conf.convertCsvToJson(app.postTeis);
 }

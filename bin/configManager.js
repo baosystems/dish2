@@ -37,17 +37,17 @@ exports.getOptions = function() {
     get: {
       auth: this.getAuth(),
       method: 'get',
-      timeout: 60000
+      timeout: 3600000
     },
     post: {
       auth: this.getAuth(),
       method: 'post',
-      timeout: 60000
+      timeout: 3600000
     },
     delete: {
       auth: this.getAuth(),
       method: 'delete',
-      timeout: 60000
+      timeout: 3600000
     }
   };
 }
