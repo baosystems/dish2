@@ -66,7 +66,7 @@ file | CSV file with tracked entity instances
 output-file | (Optional) Write summary of import operation to a file with the given name
 payload-file | (Optional) Write payload to import to a file with the given name
 
-<pre>dish_post_tracked_entity_instances --file &lt;path-to-tei-csv-file&gt;</pre>
+<pre>dish_post_tracked_entity_instances --file &lt;path-to-tei-csv-file&gt; --output-file &lt;path-to-output-file&gt;</pre>
 
 The CSV file format allows for the following column names: "trackedEntity", "orgUnit", and UIDs for tracked entity attributes. The "trackedEntity" column refers to the UID of the tracked entity, the "orgUnit" column refers to the UID of the organisation unit and the attribute columns may contain corresponding attribute values.
 
