@@ -85,6 +85,7 @@ The *dish_post_custom_form* command will upload a custom HTML data entry form fr
 
 Parameter | Description
 --- | ---
+dataset | Identifier of data set for which to create form
 file | Custom form HTML file
 
 <pre>dish_post_custom_form --dataset &lt;dataset-uid&gt; --file &lt;path-to-custom-form-file&gt;</pre>
