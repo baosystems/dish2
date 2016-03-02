@@ -47,7 +47,8 @@ app.postTeis = function(teis) {
     else {
       console.log('Tracked entity instances could not be uploaded');
       console.log('HTTP status code: ' + result.status);
-      console.log('Error: ' + err)
+      console.log('Error: ' + err);
+      console.log('Response: ' + data.toString('utf8'));
     }
   });
 }
