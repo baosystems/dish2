@@ -74,7 +74,7 @@ exports.convertCsvToJson = function(doneFn) {
     var Converter = require('csvtojson').Converter;
     var converter = new Converter({});
     converter.on('end_parsed', doneFn);
-    fs.createReadStream(this.getArgs().file).pipe(converter);
+    fs.createReadStream(this.getArgs()['file']).pipe(converter);
 }
 
 /**
