@@ -39,6 +39,12 @@ The following commands are available.
 
 The *dish_remove_org_units* command will remove a batch of organisation units, including associated complete data set registrations, data approvals and data values. It reads organisation units from a CSV file. It requires that the authenticated DHIS 2 user has the "ALL" authority in order to delete data values and at least the "delete organisation units" authority in order to delete organisation units.
 
+Parameter | Description
+--- | ---
+file | CSV file with organisation units
+output-file | (Optional) Write summary of import operation to a file with the given name
+payload-file | (Optional) Write payload to import to a file with the given name
+
 <pre>dish_remove_org_units --file &lt;path-to-org-unit-csv-file&gt;</pre>
 
 The CSV file format allows the following column names: "name", "uid" and "code". The command will attempt to match on any specified column/property. Column names are case-sensitive. You must specify at least one column.
@@ -55,6 +61,10 @@ Example CSV file:
 #### Import tracked entity instances
 
 The *dish_post_tracked_entity_instances* command will import a batch of tracked entity instances, including tracked entity, organisation unit and attributes. It reads input from a CSV file.
+
+Parameter | Description
+--- | ---
+file | CSV file with tracked entity instances
 
 <pre>dish_post_tracked_entity_instances --file &lt;path-to-tei-csv-file&gt;</pre>
 
@@ -73,17 +83,30 @@ Example CSV file:
 
 The *dish_post_custom_form* command will upload a custom HTML data entry form from a file for a given data set.
 
+Parameter | Description
+--- | ---
+dataset | Identifier of data set for which to create form
+file | Custom form HTML file
+
 <pre>dish_post_custom_form --dataset &lt;dataset-uid&gt; --file &lt;path-to-custom-form-file&gt;</pre>
 
 #### Upload custom Javascript
 
 The *dish_post_js* command will upload a custom Javascript file using the *files/script* Web API resource.
 
+Parameter | Description
+--- | ---
+file | Javascript file
+
 <pre>dish_post_js --file &lt;path-to-javascript-file&gt;</pre>
 
 #### Upload custom CSS
 
 The *dish_post_js* command will upload a custom CSS file using the *files/style* Web API resource.
+
+Parameter | Description
+--- | ---
+file | CSS file
 
 <pre>dish_post_css --file &lt;path-to-css-file&gt;</pre>
 
