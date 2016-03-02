@@ -42,8 +42,6 @@ The *dish_remove_org_units* command will remove a batch of organisation units, i
 Parameter | Description
 --- | ---
 file | CSV file with organisation units
-output-file | (Optional) Write summary of import operation to a file with the given name
-payload-file | (Optional) Write payload to import to a file with the given name
 
 <pre>dish_remove_org_units --file &lt;path-to-org-unit-csv-file&gt;</pre>
 
@@ -65,6 +63,8 @@ The *dish_post_tracked_entity_instances* command will import a batch of tracked 
 Parameter | Description
 --- | ---
 file | CSV file with tracked entity instances
+output-file | (Optional) Write summary of import operation to a file with the given name
+payload-file | (Optional) Write payload to import to a file with the given name
 
 <pre>dish_post_tracked_entity_instances --file &lt;path-to-tei-csv-file&gt;</pre>
 
