@@ -42,7 +42,7 @@ The *dish_remove_objects* command will remove metadata objects (identifiable obj
 Parameter | Description
 --- | ---
 file | CSV file with organisation units
-object-type | Type of object to delete, matching the Web API plural URL path, such as "categoryOptions", "dataElements", "indicators"
+object-type | Type of object to delete, matching the Web API plural URL path, such as categoryOptions, dataElements
 
 <pre>dish_remove_ojects --file &lt;path-to-csv-file&gt; --output-type &lt;object-type-name&gt;
 
