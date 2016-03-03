@@ -90,7 +90,7 @@ app.removeOrgUnit = function(obj,prop) {
 */
 app.run = function() {
   if (!conf.isArg('file')) {
-    return console.log('Usage: node remove_org_units.js --file <name-of-org-unit-csv-file>');
+    return console.log('Usage: node remove_org_units --file <name-of-org-unit-csv-file>');
   }
 
   conf.convertCsvToJson(app.removeOrgUnits);

@@ -24,6 +24,7 @@
   "preferGlobal": true,
   "bin": {
     "dish_remove_org_units": "bin/remove_org_units.js",
+    "dish_remove_objects": "bin/remove_objects.js",
     "dish_post_custom_form": "bin/post_custom_dataentryform.js",
     "dish_post_tracked_entity_instances": "bin/post_tracked_entity_instances.js",
     "dish_post_js": "bin/post_js.js",
