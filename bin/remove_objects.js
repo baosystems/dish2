@@ -16,7 +16,6 @@ app.removeObjects = function(objects) {
   for (var i = 0; i<objects.length; i++) {
     obj = objects[i];
     url = app.delBaseUrl + '/' + obj.id;
-    console.log('Delete URL: ' + url);
 
     delResp = urlsync.request(url, conf.getOptions().delete);
 
