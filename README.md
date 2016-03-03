@@ -35,6 +35,28 @@ touch /home/dhis/config/dish.json
 
 The following commands are available.
 
+#### Remove identifiable objects
+
+The *dish_remove_objects* command will remove metadata objects (identifiable objects). It reads identifiers (UIDs) from a CSV file. It requires that the authenticated DHIS 2 user has the authority to delete objects.
+
+Parameter | Description
+--- | ---
+file | CSV file with organisation units
+object-type | Type of object to delete, matching the Web API plural URL path, e.g. dataElements, categoryOptions
+
+<pre>dish_remove_ojects --file &lt;path-to-csv-file&gt; --object-type &lt;object-type-name&gt;</pre>
+
+The CSV file must have a column header name with the value "id", and contain one identifier (UID) per row.
+
+Example CSV file:
+
+<pre>
+"id"
+"Fzj5GhvP91x"
+"CpdYVRMm6gI"
+"r3s85EzShLE"
+</pre>
+
 #### Remove organisation units
 
 The *dish_remove_org_units* command will remove a batch of organisation units, including associated complete data set registrations, data approvals and data values. It reads organisation units from a CSV file. It requires that the authenticated DHIS 2 user has the "ALL" authority in order to delete data values and at least the "delete organisation units" authority in order to delete organisation units.
@@ -45,7 +67,7 @@ file | CSV file with organisation units
 
 <pre>dish_remove_org_units --file &lt;path-to-org-unit-csv-file&gt;</pre>
 
-The CSV file format allows the following column names: "name", "uid" and "code". The command will attempt to match on any specified column/property. Column names are case-sensitive. You must specify at least one column.
+The CSV file format allows the following column names: "name", "id" and "code". The command will attempt to match on any specified column/property. Column names are case-sensitive. You must specify at least one column.
 
 Example CSV file:
 
@@ -66,7 +88,7 @@ file | CSV file with tracked entity instances
 output-file | (Optional) Write summary of import operation to a file with the given name
 payload-file | (Optional) Write payload to import to a file with the given name
 
-<pre>dish_post_tracked_entity_instances --file &lt;path-to-tei-csv-file&gt;</pre>
+<pre>dish_post_tracked_entity_instances --file &lt;path-to-tei-csv-file&gt; --output-file &lt;path-to-output-file&gt;</pre>
 
 The CSV file format allows for the following column names: "trackedEntity", "orgUnit", and UIDs for tracked entity attributes. The "trackedEntity" column refers to the UID of the tracked entity, the "orgUnit" column refers to the UID of the organisation unit and the attribute columns may contain corresponding attribute values.
 
@@ -88,7 +110,7 @@ Parameter | Description
 dataset | Identifier of data set for which to create form
 file | Custom form HTML file
 
-<pre>dish_post_custom_form --dataset &lt;dataset-uid&gt; --file &lt;path-to-custom-form-file&gt;</pre>
+<pre>dish_post_custom_form --dataset &lt;dataset-id&gt; --file &lt;path-to-custom-form-file&gt;</pre>
 
 #### Upload custom Javascript
 
