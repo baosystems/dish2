@@ -35,7 +35,7 @@ touch /home/dhis/config/dish.json
 
 The following commands are available.
 
-#### Remove identifiable objects
+#### Remove metadata objects
 
 The *dish_remove_objects* command will remove metadata objects (identifiable objects). It reads identifiers (UIDs) from a CSV file. It requires that the authenticated DHIS 2 user has the authority to delete objects.
 
