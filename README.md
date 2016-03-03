@@ -35,6 +35,28 @@ touch /home/dhis/config/dish.json
 
 The following commands are available.
 
+### Remove identifiable objects
+
+The *dish_remove_objects* command will remove metadata objects (identifiable objects). It reads identifiers (UIDs) from a CSV file. It requires that the authenticated DHIS 2 user has the authority to delete objects.
+
+Parameter | Description
+--- | ---
+file | CSV file with organisation units
+object-type | Type of object to delete, matching the Web API plural URL path, such as "categoryOptions", "dataElements", "indicators"
+
+<pre>dish_remove_ojects --file &lt;path-to-csv-file&gt; --output-type &lt;object-type-name&gt;
+
+The CSV file must have a column header name with the value "id", and contain one identifier (UID) per row.
+
+Example CSV file:
+
+<pre>
+"id"
+"Fzj5GhvP91x"
+"CpdYVRMm6gI"
+"r3s85EzShLE"
+</pre>
+
 #### Remove organisation units
 
 The *dish_remove_org_units* command will remove a batch of organisation units, including associated complete data set registrations, data approvals and data values. It reads organisation units from a CSV file. It requires that the authenticated DHIS 2 user has the "ALL" authority in order to delete data values and at least the "delete organisation units" authority in order to delete organisation units.
