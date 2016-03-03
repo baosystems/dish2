@@ -45,7 +45,7 @@ file | CSV file with organisation units
 
 <pre>dish_remove_org_units --file &lt;path-to-org-unit-csv-file&gt;</pre>
 
-The CSV file format allows the following column names: "name", "uid" and "code". The command will attempt to match on any specified column/property. Column names are case-sensitive. You must specify at least one column.
+The CSV file format allows the following column names: "name", "id" and "code". The command will attempt to match on any specified column/property. Column names are case-sensitive. You must specify at least one column.
 
 Example CSV file:
 
@@ -88,7 +88,7 @@ Parameter | Description
 dataset | Identifier of data set for which to create form
 file | Custom form HTML file
 
-<pre>dish_post_custom_form --dataset &lt;dataset-uid&gt; --file &lt;path-to-custom-form-file&gt;</pre>
+<pre>dish_post_custom_form --dataset &lt;dataset-id&gt; --file &lt;path-to-custom-form-file&gt;</pre>
 
 #### Upload custom Javascript
 
