@@ -31,6 +31,23 @@ export DHIS2_HOME='/home/dhis/config'
 touch /home/dhis/config/dish.json
 </pre>
 
+### Command overview
+
+The available commands are listed in the table below. Details about each command follow below.
+
+Command | Description
+--- | ---
+dish_remove_objects | Removes metadata objects
+dish_remove_org_units | Removes organisation units including data values
+dish_post_tracked_entity_instances | Imports tracked entity instances including attributes
+dish_post_events | Imports single events including data values
+dish_post_custom_form | Uploads a custom data entry form for a data set
+dish_post_js | Uploads a javascript file
+dish_post_css | Uploads a CSS file
+dish_gen_analytics_tables | Initiates an update of analytics tables
+dish_gen_resource_tables | Initiates an update of resource tables
+dish_run_integrity_checks | Runs SQL view-based integrity checks
+
 ### Available commands
 
 The following commands are available.
@@ -101,6 +118,29 @@ Example CSV file:
 "ahvFNubg3F7","v29iD7vYdpE","10196410140072","68","agfield"
 </pre>
 
+#### Import events
+
+The *dish_post_events* command will import a batch of single events including data values.
+
+Parameter | Description
+--- | ---
+file | CSV file with events
+output-file | (Optional) Write summary of import operation to a file with the given name
+payload-file | (Optional) Write payload to import to a file with the given name
+
+<pre>dish_post_events --file &lt;path-to-event-csv-file&gt; --output-file &lt;path-to-output-file&gt;</pre>
+
+The CSV file format allows for the following column names: "program", "orgUnit", "eventDate", "status", "storedBy", "longitude", "latitude", following these UIDs for data elements may be specified.
+
+Example CSV file:
+
+<pre>
+"program","orgUnit","eventDate","status","storedBy","longitude","latitude","qrur9Dvnyt5","oZg33kd9taw"
+"eBAyeGv0exc","DiszpKrYNg8","2013-05-17","COMPLETED","admin","10.9","59.8","22","Male"
+"eBAyeGv0exc","DiszpKrYNg8","2013-05-17","COMPLETED","admin","11.3","55.1","22","Female"
+"eBAyeGv0exc","DiszpKrYNg8","2013-05-17","COMPLETED","admin","10.3","54.3","22","Male"
+</pre>
+
 #### Upload custom data entry form
 
 The *dish_post_custom_form* command will upload a custom HTML data entry form from a file for a given data set.
@@ -124,7 +164,7 @@ file | Javascript file
 
 #### Upload custom CSS
 
-The *dish_post_js* command will upload a custom CSS file using the *files/style* Web API resource.
+The *dish_post_css* command will upload a custom CSS file using the *files/style* Web API resource.
 
 Parameter | Description
 --- | ---
