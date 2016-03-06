@@ -118,10 +118,10 @@ The CSV file format allows for the following column names: "program", "orgUnit",
 Example CSV file:
 
 <pre>
-"program","orgUnit","eventDate","status","storedBy","longitude","latitude","qrur9Dvnyt5","oZg33kd9taw","msodh3rEMJa"
-"eBAyeGv0exc","DiszpKrYNg8","2013-05-17","COMPLETED","admin","10.9","59.8","22","Male","2013-05-18"
-"eBAyeGv0exc","DiszpKrYNg8","2013-05-17","COMPLETED","admin","11.3","55.1","22","Female","2013-05-22"
-"eBAyeGv0exc","DiszpKrYNg8","2013-05-17","COMPLETED","admin","10.3","54.3","22","Male","2013-05-19"
+"program","orgUnit","eventDate","status","storedBy","longitude","latitude","qrur9Dvnyt5","oZg33kd9taw"
+"eBAyeGv0exc","DiszpKrYNg8","2013-05-17","COMPLETED","admin","10.9","59.8","22","Male"
+"eBAyeGv0exc","DiszpKrYNg8","2013-05-17","COMPLETED","admin","11.3","55.1","22","Female"
+"eBAyeGv0exc","DiszpKrYNg8","2013-05-17","COMPLETED","admin","10.3","54.3","22","Male"
 </pre>
 
 #### Upload custom data entry form
