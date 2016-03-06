@@ -36,7 +36,7 @@ app.postTeis = function(teis) {
 
       if (conf.isArg('output-file')) {
         var outputFile = conf.getArgs()['output-file'],
-            output = JSON.stringify(resp, null, 4);
+          output = JSON.stringify(resp, null, 4);
         fs.writeFile(outputFile, output, 'utf8');
         console.log('Output written to: ' + outputFile);
       }
@@ -64,7 +64,7 @@ app.getTeis = function(teis) {
   for (var i=0; i<teis.length; i++) {
     var tei = teis[i];
     var obj = {
-      attributes = []
+      attributes: []
     };
 
     Object.keys(tei).forEach(function(key,inx) {
