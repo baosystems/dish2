@@ -101,6 +101,29 @@ Example CSV file:
 "ahvFNubg3F7","v29iD7vYdpE","10196410140072","68","agfield"
 </pre>
 
+#### Import events
+
+The *dish_post_events* command will import a batch of events including data values.
+
+Parameter | Description
+--- | ---
+file | CSV file with events
+output-file | (Optional) Write summary of import operation to a file with the given name
+payload-file | (Optional) Write payload to import to a file with the given name
+
+<pre>dish_post_events --file &lt;path-to-event-csv-file&gt; --output-file &lt;path-to-output-file&gt;</pre>
+
+The CSV file format allows for the following column names: "program", "orgUnit", "eventDate", "status", "storedBy", "longitude", "latitude", following these UIDs for data elements may be specified.
+
+Example CSV file:
+
+<pre>
+"program","orgUnit","eventDate","status","storedBy","longitude","latitude","qrur9Dvnyt5","oZg33kd9taw","msodh3rEMJa"
+"eBAyeGv0exc","DiszpKrYNg8","2013-05-17","COMPLETED","admin","10.9","59.8","22","Male","2013-05-18"
+"eBAyeGv0exc","DiszpKrYNg8","2013-05-17","COMPLETED","admin","11.3","55.1","22","Female","2013-05-22"
+"eBAyeGv0exc","DiszpKrYNg8","2013-05-17","COMPLETED","admin","10.3","54.3","22","Male","2013-05-19"
+</pre>
+
 #### Upload custom data entry form
 
 The *dish_post_custom_form* command will upload a custom HTML data entry form from a file for a given data set.
