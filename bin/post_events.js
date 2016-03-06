@@ -15,8 +15,11 @@ const app = {
 */
 app.postEvents = function(events) {
   var data = app.getEvents(events);
-  console.log(JSON.stringify(data));
 
+  if (conf.isArg('payload-file')) {
+    fs.writeFile(conf.getArgs()['payload-file'], JSON.stringify(data));
+  }
+  
   var options = conf.getOptions().post;
   options.content = JSON.stringify(data);
   options.headers = {
