@@ -31,6 +31,23 @@ export DHIS2_HOME='/home/dhis/config'
 touch /home/dhis/config/dish.json
 </pre>
 
+### Command overview
+
+The available commands are listed in the table below. Details about each command follows below.
+
+Command | Description
+--- | ---
+dish_remove_objects | Removes metadata objects
+dish_remove_org_units | Removes organisation units including data values
+dish_post_tracked_entity_instances | Imports tracked entity instances including attributes
+dish_post_events | Imports single events including data values
+dish_post_custom_form | Uploads a custom data entry form for a data set
+dish_post_js | Uploads a javascript file
+dish_post_css | Uploads a CSS file
+dish_gen_analytics_tables | Initiates an update of analytics tables
+dish_gen_resource_tables | Initiates an update of resource tables
+dish_run_integrity_checks | Runs SQL view-based integrity checks
+
 ### Available commands
 
 The following commands are available.
@@ -103,7 +120,7 @@ Example CSV file:
 
 #### Import events
 
-The *dish_post_events* command will import a batch of events including data values.
+The *dish_post_events* command will import a batch of single events including data values.
 
 Parameter | Description
 --- | ---
@@ -147,7 +164,7 @@ file | Javascript file
 
 #### Upload custom CSS
 
-The *dish_post_js* command will upload a custom CSS file using the *files/style* Web API resource.
+The *dish_post_css* command will upload a custom CSS file using the *files/style* Web API resource.
 
 Parameter | Description
 --- | ---
