@@ -59,12 +59,13 @@ app.postTeis = function(teis) {
 app.getTeis = function(teis) {
   var payload = {
     trackedEntityInstances: []
-  }
+  };
 
   for (var i=0; i<teis.length; i++) {
     var tei = teis[i];
-      obj = {},
-      attrs = [];
+    var obj = {
+      attributes = []
+    };
 
     Object.keys(tei).forEach(function(key,inx) {
 
@@ -75,15 +76,15 @@ app.getTeis = function(teis) {
       if ('trackedEntity' == key || 'orgUnit' == key) {
         obj[key] = tei[key];
       }
-      else {
-        var attr = {};
-        attr['attribute'] = key;
-        attr['value'] = tei[key];
-        attrs.push(attr);
+      else if (conf.isUid(key)) {
+        var attr = {
+          attribute: key,
+          value: tei[key]
+        };
+
+        obj.attributes.push(attr);
       }
     });
-
-    obj.attributes = attrs;
 
     payload.trackedEntityInstances.push(obj);
   }

@@ -5,6 +5,12 @@ const fs = require('fs');
 const urllib = require('urllib');
 const argv = require('yargs').argv;
 
+/* TODO conf namespace */
+
+var cnf = {
+  uidPattern: new RegExp('^[a-zA-Z]{1}[a-zA-Z0-9]{10}$')
+}
+
 var config,
     configFile,
     configLocation,
@@ -64,6 +70,17 @@ exports.getArgs = function() {
 */
 exports.isArg = function(arg) {
   return !!(argv[arg] && argv[arg].length);
+}
+
+/**
+* Indicates whether the given string is a valid UID.
+*/
+exports.isUid = function(str) {
+  if (!str || !str.length) {
+    return false;
+  }
+
+  return cnf.uidPattern.test(str);
 }
 
 /**

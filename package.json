@@ -27,6 +27,7 @@
     "dish_remove_objects": "bin/remove_objects.js",
     "dish_post_custom_form": "bin/post_custom_dataentryform.js",
     "dish_post_tracked_entity_instances": "bin/post_tracked_entity_instances.js",
+    "dish_post_events": "bin/post_events.js",
     "dish_post_js": "bin/post_js.js",
     "dish_post_css": "bin/post_css.js",
     "dish_gen_analytics_tables": "bin/generate_analytics_tables.js",
