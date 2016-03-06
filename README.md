@@ -33,7 +33,7 @@ touch /home/dhis/config/dish.json
 
 ### Command overview
 
-The available commands are listed in the table below. Details about each command follows below.
+The available commands are listed in the table below. Details about each command follow below.
 
 Command | Description
 --- | ---
