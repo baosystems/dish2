@@ -132,7 +132,7 @@ exports.postFile = function(url, file, contentType) {
 * @param json the JSON data structure to use as payload.
 */
 exports.postJson = function(url, json) {
-  var options = this.getOptions().post;
+
   if (this.isArg('payload-file')) {
     fs.writeFile(this.getArgs()['payload-file'], JSON.stringify(json));
   }
@@ -144,6 +144,7 @@ exports.postJson = function(url, json) {
   };
 
   console.log('Sending JSON data..');
+  console.log('POST URL: ' + url);
 
   urllib.request(url, options, function(err, data, result) {
 
