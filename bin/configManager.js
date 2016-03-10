@@ -4,6 +4,8 @@
 const fs = require('fs');
 const urllib = require('urllib');
 const argv = require('yargs').argv;
+const csvtojson = require('csvtojson');
+const prettyjson = require('prettyjson');
 
 /* TODO conf namespace */
 
@@ -121,6 +123,51 @@ exports.postFile = function(url, file, contentType) {
         console.log('Content could not be uploaded, HTTP status code: ' + result.status);
       }
     });
+  });
+}
+
+/**
+* POST JSON data structure.
+* @param url the URL to post to.
+* @param json the JSON data structure to use as payload.
+*/
+exports.postJson = function(url, json) {
+  var options = this.getOptions().post;
+  if (this.isArg('payload-file')) {
+    fs.writeFile(this.getArgs()['payload-file'], JSON.stringify(json));
+  }
+
+  var options = this.getOptions().post;
+  options.content = JSON.stringify(json);
+  options.headers = {
+    'Content-Type': 'application/json'
+  };
+
+  console.log('Sending JSON data..');
+
+  urllib.request(url, options, function(err, data, result) {
+
+    if (200 == result.status || 201 == result.status) {
+      var resp = JSON.parse(data.toString('utf8'));
+
+      console.log('JSON data successfully imported');
+
+      if (this.isArg('output-file')) {
+        var outputFile = this.getArgs()['output-file'],
+          output = JSON.stringify(resp, null, 4);
+        fs.writeFile(outputFile, output, 'utf8');
+        console.log('Output written to: ' + outputFile);
+      }
+      else {
+        console.log(prettyjson.render(resp));
+      }
+    }
+    else {
+      console.log('JSON data import failed');
+      console.log('HTTP status code: ' + result.status);
+      console.log('Error: ' + err);
+      console.log('Response: ' + data.toString('utf8'));
+    }
   });
 }
 
