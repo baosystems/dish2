@@ -40,6 +40,7 @@ Command | Description
 dish_remove_objects | Removes metadata objects
 dish_remove_org_units | Removes organisation units including data values
 dish_post_tracked_entity_instances | Imports tracked entity instances including attributes
+dish_enroll_tracked_entity_instances | Enrolls tracked entity instances into programs for org units
 dish_post_events | Imports single events including data values
 dish_post_custom_form | Uploads a custom data entry form for a data set
 dish_post_js | Uploads a javascript file
@@ -116,6 +117,29 @@ Example CSV file:
 "ahvFNubg3F5","v29iD7vYdpE","10196410140911","11","agfield"
 "ahvFNubg3F6","v29iD7vYdpE","10196410140073","54","agfield"
 "ahvFNubg3F7","v29iD7vYdpE","10196410140072","68","agfield"
+</pre>
+
+#### Enroll tracked entity instances
+
+The *dish_enroll_tracked_entity_instances* command will enroll a batch of tracked entity instances into programs for organisatio units. It reads input from a CSV file.
+
+Parameter | Description
+--- | ---
+file | CSV file with tracked entity instance enrollments
+output-file | (Optional) Write summary of import operation to a file with the given name
+payload-file | (Optional) Write payload to import to a file with the given name
+
+<pre>dish_enroll_tracked_entity_instances --file &lt;path-to-csv-file&gt; --output-file &lt;path-to-output-file&gt;</pre>
+
+The CSV file format allows for the following column names: "trackedEntityInstance", "orgUnit", "program", "enrollmentDate", "incidentDate", which refers to UIDs and dates respectively.
+
+Example CSV file:
+
+<pre>
+"trackedEntityInstance","orgUnit","program","enrollmentDate","incidentDate"
+"bIoemewGh6f","v29iD7vYdpE","aCNTXoZ0Tmj","2015-01-01","2015-01-06"
+"SILtFfe34kj","v29iD7vYdpE"",aCNTXoZ0Tmj,"2015-01-04","2015-01-07"
+"cDnzs9C3Msg","v29iD7vYdpE","aCNTXoZ0Tmj,"2015-01-02","2015-01-09"
 </pre>
 
 #### Import events
