@@ -200,11 +200,11 @@ file | CSS file
 
 The *dish_gen_analytics_tables* command will initiate the analytics table generation process.
 
-Parameter | Description
+Parameter | Options | Description
 --- | ---
-skip-resource-tables | true or false
-skip-aggregate | true or false
-skip-events | true or false
+skip-resource-tables | true or false | Skip generating resource tables
+skip-aggregate | true or false | Skip generating aggregate analytics tables
+skip-events | true or false | Skip generating event analytics tables
 
 <pre>dish_gen_analytics_tables</pre>
 
