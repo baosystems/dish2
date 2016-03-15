@@ -7,7 +7,16 @@ const app = {
 }
 
 app.generateAnalyticsTables = function() {
-  var resp = urlsync.request(app.analyticsTableUrl, conf.getOptions().post);
+  var data = {
+    skipResourceTables: !!('true' == conf.getArgs()['skip-resource-tables']),
+    skipAggregate: !!('true' == conf.getArgs()['skip-aggregate']),
+    skipEvents: !!('true' == conf.getArgs()['skip-events'])
+  }
+
+  var options = conf.getOptions().post;
+  options.data = data;
+
+  var resp = urlsync.request(app.analyticsTableUrl, options);
 
   if (200 == resp.status) {
     console.log('Analytics tables generation started!');
