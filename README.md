@@ -202,11 +202,13 @@ The *dish_gen_analytics_tables* command will initiate the analytics table genera
 
 Parameter | Options | Description
 --- | --- | ---
-skip-resource-tables | true or false | Skip generating resource tables
-skip-aggregate | true or false | Skip generating aggregate analytics tables
-skip-events | true or false | Skip generating event analytics tables
+skip-resource-tables | false or true | Skip generating resource tables
+skip-aggregate | false or true | Skip generating aggregate analytics tables
+skip-events | false or true | Skip generating event analytics tables
 
 <pre>dish_gen_analytics_tables</pre>
+
+<pre>dish_gen_analytics_tables --skip-aggregate true</pre>
 
 #### Generate resource tables
 
