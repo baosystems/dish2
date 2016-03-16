@@ -70,6 +70,7 @@ cnf.getArgs = function() {
 
 /**
 * Indicates if the given argument was provided from the command line.
+* @param arg the argument.
 */
 cnf.isArg = function(arg) {
   return !!(argv[arg] && argv[arg].length);
@@ -77,6 +78,7 @@ cnf.isArg = function(arg) {
 
 /**
 * Indicates whether the given string is a valid UID.
+* @param str the string to test.
 */
 cnf.isUid = function(str) {
   if (!str || !str.length) {
@@ -84,6 +86,18 @@ cnf.isUid = function(str) {
   }
 
   return cnf.uidPattern.test(str);
+}
+
+/**
+* Appends a query parameter and value to the given URL.
+* @param url the url.
+* @param param the query parameter.
+* @param val the value.
+*/
+cnf.setQueryParam = function(url, param, val) {
+  var sep = url.indexOf('?') !== -1 ? '&' : '?';
+  url = url + sep + param + '=' + val;
+  return url;
 }
 
 /**
@@ -220,6 +234,7 @@ module.exports.getOptions = cnf.getOptions;
 module.exports.getArgs = cnf.getArgs;
 module.exports.isArg = cnf.isArg;
 module.exports.isUid = cnf.isUid;
+module.exports.setQueryParam = cnf.setQueryParam;
 module.exports.convertCsvToJson = cnf.convertCsvToJson;
 module.exports.postFile = cnf.postFile;
 module.exports.postJson = cnf.postJson;

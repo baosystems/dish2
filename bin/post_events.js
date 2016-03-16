@@ -14,44 +14,22 @@ const app = {
 * Post events.
 */
 app.postEvents = function(events) {
-  var data = app.getEvents(events);
+  var payload = app.getEvents(events),
+    url = app.postUrl;
 
-  if (conf.isArg('payload-file')) {
-    fs.writeFile(conf.getArgs()['payload-file'], JSON.stringify(data));
+  if (conf.isArg('org-unit-id-scheme')) {
+    url = conf.setQueryParam(url, 'orgUnitIdScheme', conf.getArgs()['org-unit-id-scheme']);
   }
-  
-  var options = conf.getOptions().post;
-  options.content = JSON.stringify(data);
-  options.headers = {
-    'Content-Type': 'application/json'
-  };
 
-  console.log('Uploading events..');
+  if (conf.isArg('data-element-id-scheme')) {
+    url = conf.setQueryParam(url, 'orgUnitIdScheme', conf.getArgs()['data-element-id-scheme']);
+  }
 
-  urllib.request(app.postUrl, options, function(err, data, result) {
+  if (conf.isArg('id-scheme')) {
+    url = conf.setQueryParam(url, 'idScheme', conf.getArgs()['id-scheme']);
+  }
 
-    if (200 == result.status || 201 == result.status) {
-      var resp = JSON.parse(data.toString('utf8'));
-
-      console.log('Events successfully uploaded');
-
-      if (conf.isArg('output-file')) {
-        var outputFile = conf.getArgs()['output-file'],
-          output = JSON.stringify(resp, null, 4);
-        fs.writeFile(outputFile, output, 'utf8');
-        console.log('Output written to: ' + outputFile);
-      }
-      else {
-        console.log(prettyjson.render(resp));
-      }
-    }
-    else {
-      console.log('Events could not be uploaded');
-      console.log('HTTP status code: ' + result.status);
-      console.log('Error: ' + err);
-      console.log('Response: ' + data.toString('utf8'));
-    }
-  });
+  conf.postJson(url, payload);
 }
 
 /**
