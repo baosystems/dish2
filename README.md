@@ -154,7 +154,7 @@ payload-file | (Optional) Write payload to import to a file with the given name
 
 <pre>dish_post_events --file &lt;path-to-event-csv-file&gt; --output-file &lt;path-to-output-file&gt;</pre>
 
-The CSV file format allows for the following column names: "program", "orgUnit", "eventDate", "status", "storedBy", "longitude", "latitude", following these UIDs for data elements may be specified.
+The CSV file format allows for the following column names: "program", "orgUnit", "eventDate", "status", "storedBy", "longitude", "latitude"; following these, UIDs for any number of data elements may be specified.
 
 Example CSV file:
 
