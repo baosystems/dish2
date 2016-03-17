@@ -151,6 +151,10 @@ Parameter | Description
 file | CSV file with events
 output-file | (Optional) Write summary of import operation to a file with the given name
 payload-file | (Optional) Write payload to import to a file with the given name
+org-unit-id-scheme | (Optional) uid or code
+data-element-id-scheme | (Optional) uid or code
+id-scheme | (Optional) uid or code
+
 
 <pre>dish_post_events --file &lt;path-to-event-csv-file&gt; --output-file &lt;path-to-output-file&gt;</pre>
 
