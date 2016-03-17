@@ -174,16 +174,21 @@ cnf.postJson = function(url, json) {
       var resp = JSON.parse(dataStr);
 
       console.log('JSON data successfully imported');
+      console.log(isOutputFile);
 
       if (isOutputFile) {
-        var outputFile = outputFile,
-          output = JSON.stringify(resp, null, 4);
+        var output = JSON.stringify(resp, null, 4);
         fs.writeFile(outputFile, output, 'utf8');
         console.log('Output written to: ' + outputFile);
       }
       else {
         console.log(prettyjson.render(resp));
       }
+    }
+    else if (409 == result.status) {
+      console.log('There was a conflict while importing JSON data');
+      console.log('HTTP status code: ' + result.status);
+      console.log('Response: ' + dataStr);
     }
     else {
       console.log('JSON data import failed');

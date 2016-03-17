@@ -87,8 +87,8 @@ app.run = function() {
     return console.log('Usage: node post_events --file <name-of-input-csv-file>');
   }
 
-    console.log('Using file: ' + conf.getArgs()['file']);
-    console.log('Parsing CSV file..');
+  console.log('Using file: ' + conf.getArgs()['file']);
+  console.log('Parsing CSV file..');
 
   conf.convertCsvToJson(app.postEvents);
 }

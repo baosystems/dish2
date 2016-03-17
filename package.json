@@ -1,6 +1,6 @@
 {
   "name": "dish2",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description": "Dish2 is a command line tool for DHIS 2 Web API interaction",
   "engines": {
     "node": ">= 4.2.2"
@@ -33,7 +33,8 @@
     "dish_post_css": "bin/post_css.js",
     "dish_gen_analytics_tables": "bin/generate_analytics_tables.js",
     "dish_gen_resource_tables": "bin/generate_resource_tables.js",
-    "dish_run_integrity_checks": "bin/run_integrity_checks.js"
+    "dish_run_integrity_checks": "bin/run_integrity_checks.js",
+    "dish_convert_to_json": "bin/convert_csv_to_json.js"
   },
   "bugs": {
     "url": "https://github.com/baosystems/dish2/issues"
