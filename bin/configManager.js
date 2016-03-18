@@ -189,7 +189,7 @@ cnf.postJson = function(url, json) {
       console.log('HTTP status code: ' + result.status);
 
       if (isOutputFile) {
-        fs.writeFile(outputFile, output, 'utf8');
+        fs.writeFile(outputFile, dataStr, 'utf8');
         console.log('Output written to: ' + outputFile);
       }
       else {
