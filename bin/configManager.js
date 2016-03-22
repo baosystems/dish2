@@ -155,6 +155,7 @@ cnf.postJson = function(url, json) {
 
   if (isPayloadFile) {
     fs.writeFile(payloadfile, JSON.stringify(json));
+    console.log('Payload written to: ' + payloadfile);
   }
 
   var options = cnf.getOptions().post;

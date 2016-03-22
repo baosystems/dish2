@@ -7,7 +7,7 @@ const conf = require('./configManager.js');
 
 const app = {
   postUrl: conf.getConf().api.baseUrl + '/events',
-  fixedProps: ['program', 'orgUnit', 'eventDate', 'status', 'storedBy']
+  fixedProps: ['program', 'orgUnit', 'eventDate', 'status', 'storedBy', 'attributeCategoryOptions']
 }
 
 /**
@@ -23,6 +23,10 @@ app.postEvents = function(events) {
 
   if (conf.isArg('data-element-id-scheme')) {
     url = conf.setQueryParam(url, 'orgUnitIdScheme', conf.getArgs()['data-element-id-scheme']);
+  }
+
+  if (conf.isArg('category-option-id-scheme')) {
+    url = conf.setQueryParam(url, 'categoryOptionIdScheme', conf.getArgs()['category-option-id-scheme']);
   }
 
   if (conf.isArg('id-scheme')) {
