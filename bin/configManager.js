@@ -164,8 +164,8 @@ cnf.postJson = function(url, json) {
     'Content-Type': 'application/json'
   };
 
-  console.log('Sending JSON data..');
   console.log('POST URL: ' + url);
+  console.log('Sending JSON data..');
 
   urllib.request(url, options, function(err, data, result) {
 
