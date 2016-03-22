@@ -171,10 +171,15 @@ cnf.postJson = function(url, json) {
 
     var dataStr = data ? data.toString('utf8') : '';
 
-    if (200 == result.status || 201 == result.status) {
+    if (200 == result.status || 201 == result.status || 409 == result.status) {
       var resp = JSON.parse(dataStr);
 
-      console.log('JSON data successfully imported');
+      if (409 == result.status) {
+        console.log('There was a conflict while importing JSON data');
+      }
+      else {
+        console.log('JSON data successfully imported');
+      }
 
       if (isOutputFile) {
         var output = JSON.stringify(resp, null, 4);
@@ -183,18 +188,6 @@ cnf.postJson = function(url, json) {
       }
       else {
         console.log(prettyjson.render(resp));
-      }
-    }
-    else if (409 == result.status) {
-      console.log('There was a conflict while importing JSON data');
-      console.log('HTTP status code: ' + result.status);
-
-      if (isOutputFile) {
-        fs.writeFile(outputFile, dataStr, 'utf8');
-        console.log('Output written to: ' + outputFile);
-      }
-      else {
-        console.log(dataStr);
       }
     }
     else {
