@@ -5,7 +5,7 @@ const fs = require('fs');
 const conf = require('./configManager.js');
 
 const app = {
-  delBaseUrl: conf.getConf().api.baseUrl + '/' + conf.getArgs()['object-type'],
+  delBaseUrl: conf.getConf().dhis.baseurl + '/api/' + conf.getArgs()['object-type'],
   deleteCount: 0,
   errorCount: 0
 }

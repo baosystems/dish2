@@ -6,7 +6,7 @@ const prettyjson = require('prettyjson');
 const conf = require('./configManager.js');
 
 const app = {
-  teisUrl: conf.getConf().api.baseUrl + '/trackedEntityInstances'
+  teisUrl: conf.getConf().dhis.baseurl + '/api/trackedEntityInstances'
 }
 
 /**

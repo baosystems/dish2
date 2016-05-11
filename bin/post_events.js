@@ -6,7 +6,7 @@ const prettyjson = require('prettyjson');
 const conf = require('./configManager.js');
 
 const app = {
-  postUrl: conf.getConf().api.baseUrl + '/events',
+  postUrl: conf.getConf().dhis.baseurl + '/api/events',
   fixedProps: ['program', 'orgUnit', 'eventDate', 'status', 'storedBy', 'attributeCategoryOptions']
 }
 
