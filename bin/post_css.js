@@ -7,7 +7,7 @@ app.run = function() {
     return console.log('Usage: node post_css --file <css-file>');
   }
 
-  var url = conf.getConf().api.baseUrl + '/files/style';
+  var url = conf.getConf().dhis.baseurl + '/api/files/style';
   conf.postFile(url, conf.getArgs().file, 'text/css');
 }
 

@@ -3,7 +3,7 @@ const urlsync = require('urllib-sync');
 const conf = require('./configManager.js');
 
 const app = {
-  analyticsTableUrl: conf.getConf().api.baseUrl + '/resourceTables/analytics'
+  analyticsTableUrl: conf.getConf().dhis.baseurl + '/api/resourceTables/analytics'
 }
 
 app.generateAnalyticsTables = function() {

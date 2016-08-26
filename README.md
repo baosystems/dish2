@@ -16,8 +16,8 @@ Dish is configured through a *dish.json* configuration file which must be a vali
 
 <pre>
 {
-  "api": {
-    "baseUrl": "http://localhost:8080/api",
+  "dhis": {
+    "baseurl": "http://localhost:8080",
     "username": "admin",
     "password": "district"
   }
@@ -62,7 +62,7 @@ Parameter | Description
 file | CSV file with organisation units
 object-type | Type of object to delete, matching the Web API plural URL path, e.g. dataElements, categoryOptions
 
-<pre>dish_remove_ojects --file &lt;path-to-csv-file&gt; --object-type &lt;object-type-name&gt;</pre>
+<pre>dish_remove_objects --file &lt;path-to-csv-file&gt; --object-type &lt;object-type-name&gt;</pre>
 
 The CSV file must have a column header name with the value "id", and contain one identifier (UID) per row.
 

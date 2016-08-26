@@ -2,7 +2,7 @@
 const conf = require('./configManager.js');
 
 const app = {
-  postUrl: conf.getConf().api.baseUrl + '/enrollments'
+  postUrl: conf.getConf().dhis.baseurl + '/api/enrollments'
 }
 
 /**
