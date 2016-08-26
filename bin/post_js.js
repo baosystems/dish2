@@ -7,7 +7,7 @@ app.run = function() {
     return console.log('Usage: node post_js --file <js-file>');
   }
 
-  var url = conf.getConf().api.baseUrl + '/files/script';
+  var url = conf.getConf().dhis.baseurl + '/api/files/script';
   conf.postFile(url, conf.getArgs().file, 'application/javascript');
 }
 

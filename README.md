@@ -16,8 +16,8 @@ Dish is configured through a *dish.json* configuration file which must be a vali
 
 <pre>
 {
-  "api": {
-    "baseUrl": "http://localhost:8080/api",
+  "dhis": {
+    "baseurl": "http://localhost:8080",
     "username": "admin",
     "password": "district"
   }

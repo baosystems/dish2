@@ -16,9 +16,9 @@ const fs = require('fs');
  */
 
 const app = {
-  sqlViewsUrl: conf.getConf().api.baseUrl + '/sqlViews.json?query=integrity_&fields=id,name,description&paging=false',
-  sqlViewsBaseUrl: conf.getConf().api.baseUrl + '/sqlViews',
-  emailUrl: conf.getConf().api.baseUrl + '/email/notification',
+  sqlViewsUrl: conf.getConf().dhis.baseurl + '/api/sqlViews.json?query=integrity_&fields=id,name,description&paging=false',
+  sqlViewsBaseUrl: conf.getConf().dhis.baseurl + '/api/sqlViews',
+  emailUrl: conf.getConf().dhis.baseurl + '/api/email/notification',
   resultsFilename: 'output.tmp',
   results: {
     failed: [],

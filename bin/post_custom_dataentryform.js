@@ -7,7 +7,7 @@ app.run = function() {
     return console.log('Usage: node post_dataentryform --dataset <datasetuid> --file <custom-form-file>');
   }
 
-  var url = conf.getConf().api.baseUrl + '/dataSets/' + conf.getArgs().dataset + '/customDataEntryForm';
+  var url = conf.getConf().dhis.baseurl + '/api/dataSets/' + conf.getArgs().dataset + '/customDataEntryForm';
   conf.postFile(url, conf.getArgs().file, 'text/html');
 }
 

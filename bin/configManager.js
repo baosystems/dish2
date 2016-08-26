@@ -35,7 +35,7 @@ cnf.getConf = function() {
 * Returns a basic authentication string.
 */
 cnf.getAuth = function() {
-  return cnf.getConf().api.username + ':' + cnf.getConf().api.password;
+  return cnf.getConf().dhis.username + ':' + cnf.getConf().dhis.password;
 }
 
 /**

@@ -3,7 +3,7 @@ const urlsync = require('urllib-sync');
 const conf = require('./configManager.js');
 
 const app = {
-  resourceTableUrl: conf.getConf().api.baseUrl + '/resourceTables'
+  resourceTableUrl: conf.getConf().dhis.baseurl + '/api/resourceTables'
 }
 
 app.generateResourceTables = function() {

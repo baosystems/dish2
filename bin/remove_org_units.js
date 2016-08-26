@@ -5,8 +5,8 @@ const fs = require('fs');
 const conf = require('./configManager.js');
 
 const app = {
-  orgUnitsUrl: conf.getConf().api.baseUrl + '/organisationUnits',
-  pruneUrl: conf.getConf().api.baseUrl + '/maintenance/dataPruning/organisationUnits',
+  orgUnitsUrl: conf.getConf().dhis.baseurl + '/api/organisationUnits',
+  pruneUrl: conf.getConf().dhis.baseurl + '/api/maintenance/dataPruning/organisationUnits',
   filename: conf.getArgs().file,
   deleteCount: 0,
   errorCount: 0
