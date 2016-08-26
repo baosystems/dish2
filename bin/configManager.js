@@ -190,6 +190,10 @@ cnf.postJson = function(url, json) {
         console.log(prettyjson.render(resp));
       }
     }
+    else if (401 == result.status) {
+      console.log('Authentication failed. Please check your username and password.');
+      console.log('HTTP status code: ' + result.status);
+    }
     else {
       console.log('JSON data import failed');
       console.log('HTTP status code: ' + result.status);
