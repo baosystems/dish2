@@ -17,12 +17,14 @@ Dish is configured through a *dish.json* configuration file which must be a vali
 <pre>
 {
   "dhis": {
-    "baseurl": "http://localhost:8080",
+    "baseurl": "http://localhost:8080/dhis",
     "username": "admin",
     "password": "district"
   }
 }
 </pre>
+
+Note that the *baseurl* should contain the hostname and the context path but not the *api* part. Examples of baseurls are *https://play.dhis2.org/demo* and *http://localhost:8080*.
 
 This configuration file will be searched for at a location defined by a *DHIS2_HOME* environment variable (borrowed from the DHIS 2 setup). If not found, your home directory will be searched. Place the *dish.json* file in the desired directory.
 
