@@ -246,4 +246,3 @@ Follow these steps to build from source:
 * Install ```node``` and ```git```
 * Clone this repo with ```git clone```
 * Install module with ```npm install -g```
-* 
