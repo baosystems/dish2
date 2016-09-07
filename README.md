@@ -241,7 +241,7 @@ The *dish_run_integrity_checks* command will run integrity checks through the re
 
 ### Build from source
 
-Follow these steps to build from source:
+Follow these steps to build this tool from source:
 
 * Install ```node``` and ```git```
 * Clone this repo with ```git clone```
