@@ -123,7 +123,7 @@ cnf.postFile = function(url, file, contentType) {
     'Content-Type': contentType
   };
 
-  fs.readFile(file, 'utf8', function (err,data) {
+  fs.readFile(file, 'utf8', function(err,data) {
     if (err) {
       return console.log(err);
     }
@@ -139,6 +139,16 @@ cnf.postFile = function(url, file, contentType) {
       }
     });
   });
+}
+
+/**
+* Reads the given file synchronously and returns the content.
+* @param file.
+*/
+cnf.getJsonFromFile = function(file) {
+  var text = fs.readFileSync(file, 'utf8');
+  var json = JSON.parse(text);
+  return json;
 }
 
 /**
@@ -241,6 +251,7 @@ module.exports.getConf = cnf.getConf;
 module.exports.getAuth = cnf.getAuth;
 module.exports.getOptions = cnf.getOptions;
 module.exports.getArgs = cnf.getArgs;
+module.exports.getJsonFromFile = cnf.getJsonFromFile;
 module.exports.isArg = cnf.isArg;
 module.exports.isUid = cnf.isUid;
 module.exports.setQueryParam = cnf.setQueryParam;

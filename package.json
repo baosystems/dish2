@@ -1,6 +1,6 @@
 {
   "name": "dish2",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Dish2 is a command line tool for DHIS 2 Web API interaction",
   "engines": {
     "node": ">= 4.2.2"
@@ -31,6 +31,7 @@
     "dish_post_events": "bin/post_events.js",
     "dish_post_js": "bin/post_js.js",
     "dish_post_css": "bin/post_css.js",
+    "dish_post_metadata": "bin/post_metadata.js",
     "dish_gen_analytics_tables": "bin/generate_analytics_tables.js",
     "dish_gen_resource_tables": "bin/generate_resource_tables.js",
     "dish_run_integrity_checks": "bin/run_integrity_checks.js",

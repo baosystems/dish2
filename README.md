@@ -45,6 +45,7 @@ dish_post_events | Imports single events including data values
 dish_post_custom_form | Uploads a custom data entry form for a data set
 dish_post_js | Uploads a javascript file
 dish_post_css | Uploads a CSS file
+dish_post_metadata | Imports a JSON metadata document
 dish_gen_analytics_tables | Initiates an update of analytics tables
 dish_gen_resource_tables | Initiates an update of resource tables
 dish_run_integrity_checks | Runs SQL view-based integrity checks
