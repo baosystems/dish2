@@ -201,6 +201,16 @@ file | CSS file
 
 <pre>dish_post_css --file &lt;path-to-css-file&gt;</pre>
 
+#### Import metadata
+
+The *dish_post_metadata* command will upload a JSON metadata file using the *metadata* Web API resource.
+
+Parameter | Description
+--- | ---
+file | JSON file
+
+<pre>dish_post_metadata --file &lt;path-to-json-file&gt;</pre>
+
 #### Generate analytics tables
 
 The *dish_gen_analytics_tables* command will initiate the analytics table generation process.
