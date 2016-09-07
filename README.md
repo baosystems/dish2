@@ -238,3 +238,12 @@ The *dish_gen_resource_tables* command will initiate the resource table generati
 The *dish_run_integrity_checks* command will run integrity checks through the remote API. Integrity checks are SQL views with names prefixed with "INTEGRITY_". The integrity SQL views should return rows which illustrate integrity violations. The SQL views checks should return zero rows if the integrity is valid. It is recommended to provide a description for the SQL views explaining the nature of the integrity violation.
 
 <pre>dish_run_integrity_checks</pre>
+
+### Build from source
+
+Follow these steps to build from source:
+
+* Install <pre>node</pre> and <pre>git</pre>.
+* Clone this repo with <pre>git clone</pre>.
+* Install module with <pre>npm install -g</pre>
+* 
