@@ -243,7 +243,7 @@ The *dish_run_integrity_checks* command will run integrity checks through the re
 
 Follow these steps to build from source:
 
-* Install <pre>node</pre> and <pre>git</pre>.
-* Clone this repo with <pre>git clone</pre>.
-* Install module with <pre>npm install -g</pre>
+* Install ```node``` and ```git```
+* Clone this repo with ```git clone```
+* Install module with ```npm install -g```
 * 
