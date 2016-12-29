@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const conf = require('./configManager.js');
 const urlsync = require('urllib-sync');
+const urllib = require('urllib');
 const fs = require('fs');
 
 const app = {
@@ -8,25 +9,20 @@ const app = {
 
 app.logStats = function(requests) {
   var countMap = new conf.countMap(),
-    totalTime = 0,
-    totalData = 0;
+    totalTime = 0;
 
   for (var i=0; i<requests.length; i++) {
     countMap.increment(requests[i].status);
     totalTime += requests[i].time;
-    totalData += requests[i].data;
   }
 
   var entries = countMap.entries(),
-    avgTime = totalTime / requests.length,
-    avgData = totalData / requests.length;
+    avgTime = totalTime / requests.length;
 
   console.info('--- Summary ---');
   console.info('Number of requests: %d', requests.length);
   console.info('Total request time: %d ms', totalTime);
   console.info('Average request time: %d ms', avgTime);
-  console.info('Total data length: %d ch', totalData);
-  console.info('Average data length: %d ch', avgData);
   console.info('Status code summary (code/requests):');
 
   for (var i=0; i<entries.length; i++) {
@@ -59,13 +55,11 @@ app.getResources = function() {
 
     requests.push({
       'status': response.status,
-      'time': end,
-      'data': response.data.length
+      'time': end
     });
 
     console.info('Response status: %d', response.status);
-    console.info('Request time: %d ms', end)
-    console.info('Data length: %d ch', response.data.length);
+    console.info('Request time: %d ms', end);
     console.info();
   }
 
