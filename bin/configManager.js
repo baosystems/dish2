@@ -244,6 +244,36 @@ cnf.initAndGetConf = function() {
   return cnf.config;
 }
 
+cnf.countMap = function() {
+  var map = {};
+
+  /**
+  * Increments the value with the given key.
+  */
+  this.increment = function(key) {
+    var existingVal = map[key];
+    map[key] = (existingVal ? (existingVal+1) : 1);
+  }
+
+  /**
+  * Returns all entries as an array where the items
+  * are objects with 'key' and 'val' properties.
+  */
+  this.entries = function() {
+    var entries = [],
+      keys = Object.keys(map);
+
+    for (var i=0; i<keys.length; i++) {
+      entries.push({
+        'key': keys[i],
+        'val': map[keys[i]]
+      });
+    }
+
+    return entries;
+  }
+}
+
 /**
 * Public functions.
 */
@@ -258,3 +288,4 @@ module.exports.setQueryParam = cnf.setQueryParam;
 module.exports.convertCsvToJson = cnf.convertCsvToJson;
 module.exports.postFile = cnf.postFile;
 module.exports.postJson = cnf.postJson;
+module.exports.countMap = cnf.countMap;

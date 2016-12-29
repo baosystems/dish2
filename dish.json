@@ -1,6 +1,6 @@
 {
   "api": {
-    "baseUrl": "http://localhost:8080/api",
+    "baseurl": "http://localhost:8080/api",
     "username": "admin",
     "password": "district"
   }
