@@ -51,6 +51,7 @@ dish_post_metadata | Imports a JSON metadata document
 dish_gen_analytics_tables | Initiates an update of analytics tables
 dish_gen_resource_tables | Initiates an update of resource tables
 dish_run_integrity_checks | Runs SQL view-based integrity checks
+dish_get_resources | Fetches web resources from a list of requests
 
 ### Available commands
 
@@ -238,6 +239,26 @@ The *dish_gen_resource_tables* command will initiate the resource table generati
 The *dish_run_integrity_checks* command will run integrity checks through the remote API. Integrity checks are SQL views with names prefixed with "INTEGRITY_". The integrity SQL views should return rows which illustrate integrity violations. The SQL views checks should return zero rows if the integrity is valid. It is recommended to provide a description for the SQL views explaining the nature of the integrity violation.
 
 <pre>dish_run_integrity_checks</pre>
+
+#### Get resources
+
+The *dish_get_resources* command will fetch arbitrary web resources based on a list of requests from the specified file. This is useful to stress-test API resources. 
+
+Parameter | Description
+--- | ---
+file | Text file with requests
+
+<pre>dish_remove_objects --file &lt;path-to-text-file&gt;</pre>
+
+The text file should contain the requests to be fetched. The file should contain one line per request and use context path URLs.
+
+Example text file:
+
+<pre>
+/api/25/analytics.json?dimension=dx:SA7WeFZnUci;V37YqbqpEhV&dimension=pe:THIS_YEAR
+/api/25/analytics.json?dimension=dx:rbkr8PL0rwM;ybzlGLjWwnK&dimension=pe:LAST_YEAR
+/api/26/dataValueSets?dataSet=pBOMPrpg1QX&period=201401&orgUnit=DiszpKrYNg8
+</pre>
 
 ### Build from source
 
