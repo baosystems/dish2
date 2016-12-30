@@ -248,7 +248,7 @@ Parameter | Description
 --- | ---
 file | Text file with requests
 
-<pre>dish_remove_objects --file &lt;path-to-text-file&gt;</pre>
+<pre>dish_get_resources --file &lt;path-to-text-file&gt;</pre>
 
 The text file should contain the requests to be fetched. The file should contain one line per request and use context path URLs (not including the base URL specified in the configuration).
 
