@@ -250,14 +250,14 @@ file | Text file with requests
 
 <pre>dish_remove_objects --file &lt;path-to-text-file&gt;</pre>
 
-The text file should contain the requests to be fetched. The file should contain one line per request and use context path URLs.
+The text file should contain the requests to be fetched. The file should contain one line per request and use context path URLs (not including the base URL specified in the configuration).
 
 Example text file:
 
 <pre>
-/api/25/analytics.json?dimension=dx:SA7WeFZnUci;V37YqbqpEhV&dimension=pe:THIS_YEAR
-/api/25/analytics.json?dimension=dx:rbkr8PL0rwM;ybzlGLjWwnK&dimension=pe:LAST_YEAR
-/api/26/dataValueSets?dataSet=pBOMPrpg1QX&period=201401&orgUnit=DiszpKrYNg8
+/api/analytics.json?dimension=dx:SA7WeFZnUci;V37YqbqpEhV&dimension=pe:THIS_YEAR
+/api/analytics.json?dimension=dx:rbkr8PL0rwM;ybzlGLjWwnK&dimension=pe:LAST_YEAR
+/api/dataValueSets?dataSet=pBOMPrpg1QX&period=201401&orgUnit=DiszpKrYNg8
 </pre>
 
 ### Build from source
