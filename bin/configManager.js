@@ -89,6 +89,15 @@ cnf.isUid = function(str) {
 }
 
 /**
+* Indicates whether the given HTTP status code is
+* in the 200 series.
+* @param code the status code.
+*/
+cnf.is2xx = function(code) {
+  return parseInt(code/100);
+}
+
+/**
 * Appends a query parameter and value to the given URL.
 * @param url the url.
 * @param param the query parameter.
@@ -284,6 +293,7 @@ module.exports.getArgs = cnf.getArgs;
 module.exports.getJsonFromFile = cnf.getJsonFromFile;
 module.exports.isArg = cnf.isArg;
 module.exports.isUid = cnf.isUid;
+module.exports.is2xx = cnf.is2xx;
 module.exports.setQueryParam = cnf.setQueryParam;
 module.exports.convertCsvToJson = cnf.convertCsvToJson;
 module.exports.postFile = cnf.postFile;

@@ -10,7 +10,8 @@ app.generateAnalyticsTables = function() {
   var data = {
     skipResourceTables: !!('true' == conf.getArgs()['skip-resource-tables']),
     skipAggregate: !!('true' == conf.getArgs()['skip-aggregate']),
-    skipEvents: !!('true' == conf.getArgs()['skip-events'])
+    skipEvents: !!('true' == conf.getArgs()['skip-events']),
+    skipEnrollment: !!('true' == conf.getArgs()['skip-enrollment'])
   }
 
   var options = conf.getOptions().post;

@@ -58,11 +58,12 @@ app.removeOrgUnit = function(obj,prop) {
 
     delDataResp = urlsync.request(delDataUrl, conf.getOptions().post);
 
-    if (delDataResp && 200 == delDataResp.status) {
-      console.log('Data for org unit successfully deleted: ' + ou.id + ', ' + ou.name);
+    if (delDataResp && conf.is2xx(delDataResp.status)) {
+      console.log('Data for org unit successfully deleted, id: ' + ou.id + ', name: ' + ou.name);
     }
     else {
-      console.log('Data for org unit could not be deleted: ' + ou.id + ', ' + ou.name);
+      console.log(delDataResp);
+      console.log('Data for org unit could not be deleted, id: ' + ou.id + ', name: ' + ou.name);
     }
 
     delOuResp = urlsync.request(delOuUrl, conf.getOptions().delete);
