@@ -19,7 +19,7 @@ app.removeObjects = function(objects) {
 
     delResp = urlsync.request(url, conf.getOptions().delete);
 
-    if (delResp && (204 == delResp.status || 200 == delResp.status)) {
+    if (delResp && conf.is2xx(delResp.status)) {
       console.log('Object successfully deleted: ' + obj.id);
       app.deleteCount++;
     }
