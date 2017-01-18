@@ -26,7 +26,6 @@ app.removeObjects = function(objects) {
     else {
       console.log('Object could not be deleted: ' + obj.id);
       console.log('Status code: ' + delResp.status)
-      console.log(delResp);
       app.errorCount++;
     }
   }
