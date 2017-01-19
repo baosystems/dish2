@@ -68,7 +68,7 @@ app.removeOrgUnit = function(obj,prop) {
 
     delOuResp = urlsync.request(delOuUrl, conf.getOptions().delete);
 
-    if (delOuResp && 204 == delOuResp.status) {
+    if (delOuResp && conf.is2xx(delOuResp.status)) {
       console.log('Org unit successfully deleted: ' + ou.id + ', ' + ou.name);
       app.deleteCount++;
       return true;
