@@ -94,7 +94,7 @@ cnf.isUid = function(str) {
 * @param code the status code.
 */
 cnf.is2xx = function(code) {
-  return parseInt(code/100);
+  return parseInt(code/100) == 2;
 }
 
 /**
