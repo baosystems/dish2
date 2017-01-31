@@ -51,6 +51,7 @@ dish_post_metadata | Imports a JSON metadata document
 dish_gen_analytics_tables | Initiates an update of analytics tables
 dish_gen_resource_tables | Initiates an update of resource tables
 dish_run_integrity_checks | Runs SQL view-based integrity checks
+dish_set_system_setting | Sets a system setting value
 dish_get_resources | Fetches web resources from a list of requests
 
 ### Available commands
@@ -239,6 +240,17 @@ The *dish_gen_resource_tables* command will initiate the resource table generati
 The *dish_run_integrity_checks* command will run integrity checks through the remote API. Integrity checks are SQL views with names prefixed with "INTEGRITY_". The integrity SQL views should return rows which illustrate integrity violations. The SQL views checks should return zero rows if the integrity is valid. It is recommended to provide a description for the SQL views explaining the nature of the integrity violation.
 
 <pre>dish_run_integrity_checks</pre>
+
+#### Set system setting
+
+The *dish_set_system_setting* command will set a value for a system setting.
+
+Parameter | Description
+--- | ---
+setting | Name of the system setting
+value | Value
+
+<pre>dish_set_system_setting --setting keyEmailPort --value 587</pre>
 
 #### Get resources
 
