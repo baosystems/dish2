@@ -4,7 +4,7 @@ const app = {};
 
 app.run = function() {
   if (!conf.isArg('file')) {
-    return console.log('Usage: node post_metadata --file <metadata-json>');
+    return console.log('Usage: post_metadata --file <metadata-json>');
   }
 
   var url = conf.getConf().dhis.baseurl + '/api/metadata';

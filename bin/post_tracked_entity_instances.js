@@ -100,7 +100,7 @@ app.getTeis = function(teis) {
 */
 app.run = function() {
   if (!conf.isArg('file')) {
-    return console.log('Usage: node post_tracked_entity_instances --file <name-of-tei-file>');
+    return console.log('Usage: post_tracked_entity_instances --file <name-of-tei-file>');
   }
 
   console.log('Using file: ' + conf.getArgs()['file']);

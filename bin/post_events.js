@@ -88,7 +88,7 @@ app.getEvents = function(events) {
 */
 app.run = function() {
   if (!conf.isArg('file')) {
-    return console.log('Usage: node post_events --file <name-of-input-csv-file>');
+    return console.log('Usage: post_events --file <name-of-input-csv-file>');
   }
 
   console.log('Using file: ' + conf.getArgs()['file']);

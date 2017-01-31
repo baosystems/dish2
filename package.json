@@ -35,6 +35,7 @@
     "dish_gen_analytics_tables": "bin/generate_analytics_tables.js",
     "dish_gen_resource_tables": "bin/generate_resource_tables.js",
     "dish_run_integrity_checks": "bin/run_integrity_checks.js",
+    "dish_set_system_setting": "bin/set_system_setting.js",
     "dish_convert_to_json": "bin/convert_csv_to_json.js",
     "dish_get_resources": "bin/get_resources.js"
   },

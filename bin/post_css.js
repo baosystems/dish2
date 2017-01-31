@@ -4,7 +4,7 @@ const app = {};
 
 app.run = function() {
   if (!conf.isArg('file')) {
-    return console.log('Usage: node post_css --file <css-file>');
+    return console.log('Usage: post_css --file <css-file>');
   }
 
   var url = conf.getConf().dhis.baseurl + '/api/files/style';

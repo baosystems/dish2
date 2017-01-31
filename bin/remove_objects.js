@@ -41,7 +41,7 @@ app.removeObjects = function(objects) {
 */
 app.run = function() {
   if (!conf.isArg('file') || !conf.isArg('object-type')) {
-    return console.log('Usage: node remove_objects --file <name-of-input-csv-file> --object-type <object-type-name>');
+    return console.log('Usage: remove_objects --file <name-of-input-csv-file> --object-type <object-type-name>');
   }
 
   conf.convertCsvToJson(app.removeObjects);

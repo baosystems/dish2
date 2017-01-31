@@ -68,7 +68,7 @@ app.getResources = function() {
 
 app.run = function() {
   if (!conf.isArg('file')) {
-    return console.log('Usage: node get_resources --file <css-file>');
+    return console.log('Usage: get_resources --file <css-file>');
   }
 
   app.getResources();

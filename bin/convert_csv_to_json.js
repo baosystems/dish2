@@ -16,7 +16,7 @@ app.writeJson = function(objects) {
 
 app.run = function() {
   if (!conf.isArg('file')) {
-    return console.log('Usage: node convert_csv_to_json --file <name-of-csv-file> --output-file <name-of-json-file>');
+    return console.log('Usage: convert_csv_to_json --file <name-of-csv-file> --output-file <name-of-json-file>');
   }
 
   console.log('Reading from file: ' + conf.getArgs()['file']);

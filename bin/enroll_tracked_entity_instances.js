@@ -24,7 +24,7 @@ app.enrollTeis = function(json) {
 */
 app.run = function() {
   if (!conf.isArg('file')) {
-    return console.log('Usage: node enroll_tracked_entity_instances --file <name-of-enrollment-file>');
+    return console.log('Usage: enroll_tracked_entity_instances --file <name-of-enrollment-file>');
   }
 
   console.log('Using file: ' + conf.getArgs()['file']);
