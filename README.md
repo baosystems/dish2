@@ -247,7 +247,7 @@ The *dish_set_system_setting* command will set a value for a system setting.
 
 Parameter | Description
 --- | ---
-setting | Name of the system setting
+setting | Name of system setting
 value | Value
 
 <pre>dish_set_system_setting --setting keyEmailPort --value 587</pre>
