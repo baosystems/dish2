@@ -224,6 +224,7 @@ Parameter | Options | Description
 skip-resource-tables | false or true | Skip generating resource tables
 skip-aggregate | false or true | Skip generating aggregate analytics tables
 skip-events | false or true | Skip generating event analytics tables
+skip-enrollment | false or true | Skip generating enrollment anaylytics tables
 
 <pre>dish_gen_analytics_tables</pre>
 
