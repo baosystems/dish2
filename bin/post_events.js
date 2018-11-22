@@ -7,15 +7,15 @@ const conf = require('./configManager.js');
 
 const app = {
   postUrl: conf.getConf().dhis.baseurl + '/api/events',
-  fixedProps: ['program', 'orgUnit', 'eventDate', 'status', 'storedBy', 'attributeCategoryOptions']
+  fixedProps: ['program', 'orgUnit', 'eventDate', 'status', 'storedBy', 'attributeCategoryOptions', 'attributeOptionCombo']
 }
 
 /**
 * Post events.
 */
 app.postEvents = function(events) {
-  var payload = app.getEvents(events),
-    url = app.postUrl;
+  var payload = app.getEvents(events);
+  var url = app.postUrl;
 
   if (conf.isArg('org-unit-id-scheme')) {
     url = conf.setQueryParam(url, 'orgUnitIdScheme', conf.getArgs()['org-unit-id-scheme']);

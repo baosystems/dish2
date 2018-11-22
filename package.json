@@ -1,6 +1,6 @@
 {
   "name": "dish2",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Dish2 is a command line tool for DHIS 2 Web API interaction",
   "engines": {
     "node": ">= 4.2.2"

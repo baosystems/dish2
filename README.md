@@ -163,7 +163,7 @@ id-scheme | (Optional) uid or code
 
 <pre>dish_post_events --file &lt;path-to-event-csv-file&gt; --output-file &lt;path-to-output-file&gt;</pre>
 
-The CSV file format allows for the following column names: "program", "orgUnit", "eventDate", "status", "storedBy", "longitude", "latitude"; following these, UIDs for any number of data elements may be specified.
+The CSV file format allows for the following column names: "program", "orgUnit", "eventDate", "status", "storedBy", "longitude", "latitude", "attributeOptionCombo"; following these, UIDs for any number of data elements may be specified.
 
 Example CSV file:
 
