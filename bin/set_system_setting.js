@@ -5,8 +5,8 @@ const conf = require('./configManager.js');
 const app = {};
 
 app.postSetting = function() {
-  var setting = conf.getArgs()['setting'],
-    value = conf.getArgs()['value'];
+  var setting = conf.getArgs()['setting'];
+  var value = conf.getArgs()['value'];
 
   var options = conf.getOptions().post;
   options.headers = {
