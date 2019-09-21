@@ -167,13 +167,13 @@ cnf.getJsonFromFile = function(file) {
 */
 cnf.postJson = function(url, json) {
 
-  var isPayloadFile = !!cnf.isArg('payload-file'),
-    payloadfile = cnf.getArgs()['payload-file'],
-    isOutputFile = !!cnf.isArg('output-file'),
-    outputFile = cnf.getArgs()['output-file'];
+  var isPayloadFile = !!cnf.isArg('payload-file');
+  var payloadfile = cnf.getArgs()['payload-file'];
+  var isOutputFile = !!cnf.isArg('output-file');
+  var outputFile = cnf.getArgs()['output-file'];
 
   if (isPayloadFile) {
-    fs.writeFile(payloadfile, JSON.stringify(json));
+    fs.writeFile(payloadfile, JSON.stringify(json), (err) => {});
     console.log('Payload written to: ' + payloadfile);
   }
 
@@ -202,7 +202,7 @@ cnf.postJson = function(url, json) {
 
       if (isOutputFile) {
         var output = JSON.stringify(resp, null, 4);
-        fs.writeFile(outputFile, output, 'utf8');
+        fs.writeFile(outputFile, output, 'utf8', (err) => {});
         console.log('Output written to: ' + outputFile);
       }
       else {
